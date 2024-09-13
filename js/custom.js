@@ -103,6 +103,7 @@ document.addEventListener('click', function (e) {
   }
   typeWriter.start();
   script_index++;
+  audio.play();
 
   if (script_index == script_array.length) {
     console.log('reached the end');
@@ -128,3 +129,5 @@ menu_button.onclick = function () {
     menu_list.style.visibility = 'hidden';
   }
 };
+
+var audio = new Audio('./audio_files/voice_intro_01.wav');
