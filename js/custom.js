@@ -1,5 +1,15 @@
 var script_index = 0;
 
+var sound = new Howl({
+  src: ['audio_files/voice_intro_full.wav'],
+  sprite: {
+    track_01: [0, 5000],
+    track_02: [5937, 10000],
+  },
+});
+
+sound_array = ['track_01', 'track_02', 'track_03', 'track_04', 'track_05', 'track_06', 'track_07', 'track_08', 'track_09', 'track_10', 'track_11', 'track_12'];
+
 function stringSplitter(string) {
   str_array = string.split(/(\s+)/).filter(function (e) {
     return e.trim().length > 0;
@@ -9,6 +19,8 @@ function stringSplitter(string) {
 
 console.log('Playing intro');
 //document.getElementById('content_text').innerHTML = aboutCaseContent;
+
+empty_string = ' ';
 
 sec0 = 'What would you do if you only had several hours to flee a home you will never be able to return to? ';
 
@@ -66,7 +78,7 @@ just like my own grandparents and great-grandparents had left,
 holding keys to home they knew they would not be able to go back to. 
 `;
 
-script_array = [sec1, sec2, sec3, sec4, sec5, sec6, sec7, sec8, sec9, sec10, sec11, sec12];
+script_array = [sec0, sec1, sec2, sec3, sec4, sec5, sec6, sec7, sec8, sec9, sec10, sec11, sec12];
 
 console.log(script_array);
 
@@ -81,30 +93,33 @@ typeWriter = new Typewriter(intro_text_el, {
 
 //typeWriter.start();
 
-stringArray = stringSplitter(sec0);
+stringArray = stringSplitter(empty_string);
+
 for (var i = 0; i < stringArray.length; i++) {
   typeWriter.pasteString(stringArray[i] + ' ');
   //typeWriter.typeString(stringArray[i] + ' ');
   //typeWriter.pauseFor(140);
 }
-typeWriter
-  .pauseFor(1000)
-  .start()
-  .callFunction(() => {
-    $('#continue_key_button').fadeIn(1200);
-  });
+//typeWriter
+//  //.start()
+//  .callFunction(() => {
+//    $('#continue_key_button').fadeIn(1200);
+//  });
 
 document.addEventListener('click', function (e) {
-  typeWriter.deleteAll();
+  sound.stop();
+  typeWriter.deleteAll().callFunction(() => {
+    sound.play(sound_array[script_index]);
+    script_index++;
+  });
   console.log('Clicked on body');
   stringArray = stringSplitter(script_array[script_index]);
   for (var i = 0; i < stringArray.length; i++) {
     typeWriter.pasteString(stringArray[i] + ' ');
   }
   typeWriter.start();
-  script_index++;
-  audio.play();
 
+  // AFTER SCRIPT IS DONE
   if (script_index == script_array.length) {
     console.log('reached the end');
     document.getElementsByTagName('body')[0].style = 'overflow: visible';
@@ -129,5 +144,3 @@ menu_button.onclick = function () {
     menu_list.style.visibility = 'hidden';
   }
 };
-
-var audio = new Audio('./audio_files/voice_intro_01.wav');
