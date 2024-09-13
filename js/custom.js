@@ -118,3 +118,13 @@ document.addEventListener('click', function (e) {
 //$('#continue_key_button').fadeIn(1200);
 
 //typeWriter.typeString(sec1).pauseFor(3).start();
+
+menu_button = document.getElementById('menu_button');
+menu_button.onclick = function () {
+  menu_list = document.getElementById('menu_list');
+  if (menu_list.style.visibility === 'hidden') {
+    menu_list.style.visibility = 'visible';
+  } else {
+    menu_list.style.visibility = 'hidden';
+  }
+};
