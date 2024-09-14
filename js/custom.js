@@ -5,6 +5,12 @@ var sound = new Howl({
   sprite: {
     track_01: [0, 5000],
     track_02: [5937, 10000],
+    track_03: [16000, 19000],
+    track_04: [36000, 25000],
+    track_05: [61700, 22000],
+    track_06: [85000, 31000],
+    track_07: [116000, 19500],
+    track_08: [136000, 15000],
   },
 });
 
@@ -17,10 +23,7 @@ function stringSplitter(string) {
   return str_array;
 }
 
-console.log('Playing intro');
-//document.getElementById('content_text').innerHTML = aboutCaseContent;
-
-empty_string = ' ';
+empty_string = '[ Click to Start ]';
 
 sec0 = 'What would you do if you only had several hours to flee a home you will never be able to return to? ';
 
@@ -38,102 +41,82 @@ going back to homes which had been destroyed a long time ago.
 `;
 
 sec3 = `Part of the Armenia heritage is a series of traumas
-and pain that carry on from one generation to another.`;
+and pain that carry on from one generation to another. Historically,
+Armenians resided in Eastern Anatolia, in regions that were once part
+of the Ottoman Empire, now modern Turkey. Those who survived during
+the genocide lost everything. Everything, that is, except their
+identity and heritage. Through the preservation of dialects, dishes,
+and stories.`;
 
-sec4 = `The reason why there is a huge diaspora is that Armenians
-used to live in Eastern Anatolia, in the Ottoman Empire, in regions
-that are now modern Turkey.`;
-
-sec5 = `When they left during the genocide, they lost everything.
-  While they did not have any material things with them,
-  they still did transmit a heritage.`;
-
-sec6 = `Specific dialects, dishes. All this collective past affected
-me too. Most of my life I rejected parts of my identity, I did not
-want my Armenian heritage to be sad, dramatic, or traumatic.`;
-
-sec7 = `So I worked as hard as I could to be as French as I could,
-  and only kept the positive aspects of my Armenian heritage — my
-family, the language, music and food. As if our collective trauma
+sec4 = `This collective affected me too. Most of my life I rejected
+parts of my identity, I did not want to carry the sadness or trauma of
+my Armenian heritage. So I worked as hard as I could to be as French as
+I could, and only kept the positive aspects of my Armenian heritage
+— my family, the language, music and food. As if our collective trauma
 did not shape all of it.`;
 
-sec8 = `But I became a journalist, photographer and filmmaker. And
-almost despite myself, I realized I was focusing on the intersection
-between geopolitics, territory, marginality and memory.`;
+sec5 = `As an emerging journalist I found myself focusing on the
+intersection between geopolitics, territory, marginality and memory.
+I did not expect, however, to see history repeat itself through the
+collective trauma of Armenians facing yet another mass exodus and I
+needed to document it. In September 2023, after several wars and a
+prolonged blockade, the region of Nagorno-Karabakh was emptied of all
+its Armenian inhabitants. Much of the physical cultural heritage sites
+were destroyed.`;
 
-sec9 = `What I did not expect was the collective trauma of Armenians
-to wake up faced with another exodus, and for me to document it; after
-several wars, a blockade, the region of Nagorno-Karabakh was emptied of
-all its Armenian inhabitants.`;
+sec6 = `Over the three year period reporting from Nagorno-Karabakh,
+there’s this one phrase (or senitment) that kept repeating when I.
+I asked how they dealt with the constant uncertainty, how they lived
+with the constant shadow of war and violence: they would always say:
+kartses te vary tchy kar “like there’s no tomorrow”.`;
 
-sec10 = `Much of the physical cultural heritage was or is being destroyed.`;
+sec7 = `This website tells the stories of people, who just like my own
+grandparents and great-grandparents had left, holding keys to homes
+they knew they would not be able to go back to.`;
 
-sec11 = `Once again, the same images of displacement and loss. Nagorno-Karabakh
-had its own specificity; a specific Armenian dialect, culinary and musical
-specialities, its stones and soil. I started working in Nagorno-Karabakh after
-the 2020 war, which was the year I graduated from university.`;
-
-sec12 = `I felt the urge to tell the stories of people who
-just like my own grandparents and great-grandparents had left,
-holding keys to home they knew they would not be able to go back to. 
-`;
-
-script_array = [sec0, sec1, sec2, sec3, sec4, sec5, sec6, sec7, sec8, sec9, sec10, sec11, sec12];
-
-console.log(script_array);
+script_array = [sec0, sec1, sec2, sec3, sec4, sec5, sec6, sec7];
 
 var intro_text_el = document.getElementById('intro_text');
-
 typeWriter = new Typewriter(intro_text_el, {
   loop: false,
   cursor: '|',
-  delay: 120,
+  delay: 190,
   deleteSpeed: 10,
 });
-
-//typeWriter.start();
 
 stringArray = stringSplitter(empty_string);
 
 for (var i = 0; i < stringArray.length; i++) {
   typeWriter.pasteString(stringArray[i] + ' ');
-  //typeWriter.typeString(stringArray[i] + ' ');
-  //typeWriter.pauseFor(140);
 }
-//typeWriter
-//  //.start()
-//  .callFunction(() => {
-//    $('#continue_key_button').fadeIn(1200);
-//  });
+typeWriter.start();
 
 document.addEventListener('click', function (e) {
   sound.stop();
   typeWriter.deleteAll().callFunction(() => {
+    console.log('Hello?');
+    //sound.play('track_08');
     sound.play(sound_array[script_index]);
     script_index++;
   });
-  console.log('Clicked on body');
-  stringArray = stringSplitter(script_array[script_index]);
-  for (var i = 0; i < stringArray.length; i++) {
-    typeWriter.pasteString(stringArray[i] + ' ');
-  }
-  typeWriter.start();
 
   // AFTER SCRIPT IS DONE
   if (script_index == script_array.length) {
     console.log('reached the end');
     document.getElementsByTagName('body')[0].style = 'overflow: visible';
-    //document.getElementById('continue_key_button').style = 'display: none;';
-    //document.getElementById('intro_div').style = 'display: none;';
     typeWriter.deleteAll().callFunction(() => {
       $('#intro_div').fadeOut(1200);
     });
+  } else {
+    // Write Text
+    stringArray = stringSplitter(script_array[script_index]);
+    for (var i = 0; i < stringArray.length; i++) {
+      typeWriter.pasteString(stringArray[i] + ' ');
+    }
+    typeWriter.start();
   }
+  console.log('Clicked on body');
 });
-
-//$('#continue_key_button').fadeIn(1200);
-
-//typeWriter.typeString(sec1).pauseFor(3).start();
 
 menu_button = document.getElementById('menu_button');
 menu_button.onclick = function () {

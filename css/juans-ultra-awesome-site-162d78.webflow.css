@@ -663,7 +663,7 @@
   border-bottom: 1px solid var(--sand);
   border-radius: 3px;
   justify-content: center;
-  /*height: 80vh;*/
+  height: 80vh;
   display: flex;
 }
 
