@@ -1,3 +1,9 @@
+var past_intro = 0;
+
+function scale(number, inMin, inMax, outMin, outMax) {
+  return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+}
+
 var script_index = 0;
 
 var sound = new Howl({
@@ -23,9 +29,9 @@ function stringSplitter(string) {
   return str_array;
 }
 
-empty_string = '[ Click to Start ]';
+empty_string = '[ Click to Start ] <p></p> ';
 
-sec0 = 'What would you do if you only had several hours to flee a home you will never be able to return to? ';
+sec0 = 'What would you do if you only had several hours to flee a home you will never be able to return to?';
 
 sec1 = `As a daughter of immigrants and a member
 of a nation which has more people living in the diaspora
@@ -89,15 +95,20 @@ stringArray = stringSplitter(empty_string);
 for (var i = 0; i < stringArray.length; i++) {
   typeWriter.pasteString(stringArray[i] + ' ');
 }
-typeWriter.start();
 
-document.addEventListener('click', function (e) {
+menu_button = document.getElementById('menu_button');
+typeWriter.start().callFunction(() => {
+  document.getElementById('intro').style.cursor = 'pointer';
+  //menu_button.setAttribute('data-src', 'documents/key_menu_white.json');
+});
+
+document.getElementById('intro').addEventListener('click', function (e) {
   sound.stop();
   typeWriter.deleteAll().callFunction(() => {
-    console.log('Hello?');
-    //sound.play('track_08');
     sound.play(sound_array[script_index]);
     script_index++;
+    document.getElementById('intro').style.cursor = 'default';
+    document.getElementById('intro').style.pointerEvents = 'none';
   });
 
   // AFTER SCRIPT IS DONE
@@ -113,7 +124,11 @@ document.addEventListener('click', function (e) {
     for (var i = 0; i < stringArray.length; i++) {
       typeWriter.pasteString(stringArray[i] + ' ');
     }
-    typeWriter.start();
+    typeWriter.start().callFunction(() => {
+      document.getElementById('intro').style.cursor = 'pointer';
+      //menu_button.setAttribute('data-src', 'documents/key_menu_white.json');
+      document.getElementById('intro').style.pointerEvents = 'auto';
+    });
   }
   console.log('Clicked on body');
 });
@@ -127,3 +142,32 @@ menu_button.onclick = function () {
     menu_list.style.visibility = 'hidden';
   }
 };
+
+var intro_height = $('#intro').height();
+var title_height = $('.title').height();
+console.log(intro_height);
+
+document.addEventListener('scroll', (event) => {
+  //console.log(document.body.scrollTop);
+  console.log(window.scrollY);
+
+  vol = scale(scrollY, 0, intro_height, 1.0, 0.0);
+  vol_norm = Math.min(Math.max(parseFloat(vol), 0.0), 1.0);
+
+  vw = scale(scrollY, 0, 1000, 50.0, 5.0);
+  vw_norm = Math.min(Math.max(parseFloat(vol), 5.0), 50.0);
+
+  if (scrollY > intro_height) {
+    document.getElementById('menu_container').style.pointerEvents = 'auto';
+    document.getElementById('menu_container').style.left = vw_norm + 'vw';
+
+    if (past_intro == 0) {
+      menu_button.click();
+      past_intro = -1;
+    }
+  }
+
+  Howler.volume(vol_norm);
+
+  //console.log('hi');
+});

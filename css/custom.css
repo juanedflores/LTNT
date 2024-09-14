@@ -40,3 +40,7 @@ body {
 #key_button_text {
   padding: 20px;
 }
+
+.button:hover {
+  text-decoration: underline;
+}

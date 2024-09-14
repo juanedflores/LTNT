@@ -36,43 +36,16 @@
   <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
   <link href="images/favicon.png" rel="apple-touch-icon" />
   <link href="css/custom.css" rel="stylesheet" type="text/css" />
-  <style>
-    #container {
-      width: 100%;
-      height: 400px;
-      background-color: rgba(0, 0, 0, 0);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      touch-action: none;
-    }
-
-    #item {
-      width: 100px;
-      height: 100px;
-      background-color: rgb(245, 230, 99);
-      border: 2px solid rgba(136, 136, 136, 0.5);
-      touch-action: none;
-      user-select: none;
-    }
-
-    #item:active {
-      background-color: rgba(168, 218, 220, 1);
-    }
-
-    #item:hover {
-      cursor: pointer;
-      border-width: 8px;
-    }
-  </style>
 </head>
 
-<body class="body">
+<body id="body_container" class="body">
 
-  <div class="w-layout-blockcontainer container-15 w-container">
+  <div id="menu_container" class="w-layout-blockcontainer container-15 w-container">
     <!--<div style="postition: sticky;">-->
     <ul id="menu_list" role="list" class="list-2" style="visibility: hidden;">
+      <li class="w-clearfix">
+        <a href="#intro" class="button w-button">Intro</a>
+      </li>
       <li class="w-clearfix">
         <a href="#life_before" class="button w-button">Life Before in NK</a>
       </li>
@@ -80,7 +53,16 @@
         <a href="#checkpoints" class="button w-button">Checkpoints</a>
       </li>
       <li class="w-clearfix">
-        <a href="#blockade" class="button w-button">Blockade</a>
+        <a href="#blockade" class="button w-button">The Blockade</a>
+      </li>
+      <li class="w-clearfix">
+        <a href="#attack" class="button w-button">Attack / Expulsion</a>
+      </li>
+      <li class="w-clearfix">
+        <a href="#what_people_took" class="button w-button">What People Took</a>
+      </li>
+      <li class="w-clearfix">
+        <a href="#about" class="button w-button">About the Project</a>
       </li>
     </ul>
     <div id="menu_button" data-w-id="e809dc94-47c4-49c4-b6c2-46c93ae537ba" data-is-ix2-target="1"
@@ -89,7 +71,7 @@
     <!--</div>-->
   </div>
 
-  <div class="w-layout-blockcontainer landingpage w-container">
+  <div id="intro" class="w-layout-blockcontainer landingpage w-container">
     <div
       data-poster-url="https://uploads-ssl.webflow.com/63728c5602f88f03640b4142%2F66c33929c1454bef89db84a4_Video1_exodus_AWP26-poster-00001.jpg"
       data-video-urls="https://uploads-ssl.webflow.com/63728c5602f88f03640b4142%2F66c33929c1454bef89db84a4_Video1_exodus_AWP26-transcode.mp4,https://uploads-ssl.webflow.com/63728c5602f88f03640b4142%2F66c33929c1454bef89db84a4_Video1_exodus_AWP26-transcode.webm"
@@ -120,6 +102,7 @@
   <div class="w-layout-blockcontainer title w-container">
     <div class="div-block-8">
       <h1 class="heading-7">Like There&#x27;s No Tomorrow<br />Կարծես թե վաղը չկար</h1>
+      <p style="height: 40vh; display: flex; align-items: center; justify-content: center; color: white;">by Astrig</p>
     </div>
   </div>
   <div class="w-layout-blockcontainer linearfadedown w-container"></div>
@@ -841,7 +824,7 @@
     <div class="text-block-40">[ Social Media Mood Board Section]</div>
   </section>
   <section class="text">
-    <div class="w-layout-blockcontainer w-container">
+    <div id="attack" class="w-layout-blockcontainer w-container">
       <div id="w-node-_6fc1aabc-c065-f9b4-d69d-2bb7d40f3a7e-c00b4143"
         class="w-layout-layout quick-stack-2-copy wf-layout-layout">
         <div class="w-layout-cell cell-3">
@@ -959,7 +942,7 @@
     </div>
   </section>
   <section class="text-copy">
-    <div class="w-layout-blockcontainer w-container">
+    <div id="what_people_took" class="w-layout-blockcontainer w-container">
       <div id="w-node-_3ec08bc1-7e2a-bb8b-820e-afc3201ff179-c00b4143"
         class="w-layout-layout quick-stack-2-copy wf-layout-layout">
         <div class="w-layout-cell cell-3">
@@ -1547,7 +1530,7 @@
   <section>
     <div class="w-layout-blockcontainer w-container">
       <div class="text-block-46">ABOVE: <br />A fence in Kolkhozashen, Nagorno-Karabakh.</div>
-      <div class="div-block-21">
+      <div id="about" class="div-block-21">
         <div class="text-block-47">Astrig Agopian: Like There’s No Tomorrow  <br />Կարծես թե վաղը չկար is supported by
           the Art<br />Works Projects Emerging Lens Fellowship.</div>
       </div>

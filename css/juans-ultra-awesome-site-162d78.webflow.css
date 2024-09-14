@@ -636,7 +636,7 @@
   object-fit: fill;
   background-color: #151820;
   width: 100vw;
-  height: 40vh;
+  height: 90vh;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -1024,7 +1024,7 @@
   float: left;
   text-align: left;
   width: 80%;
-  padding-right: 20px;
+  padding-left: 20px;
   position: static;
   left: 15px;
   right: 0;
@@ -1195,10 +1195,16 @@
   max-width: 94%;
   display: flex;
   position: fixed;
-  bottom: 5vh;
-  left: 2vw;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  bottom: 20vh;
+  /*left: 2vw;*/
   float: right;
-  /*inset: 0% 0% 0% -10%;*/
+  pointer-events: none;
+}
+
+#menu_button:hover {
+  cursor: pointer;
 }
 
 .section-10 {
@@ -1210,7 +1216,7 @@
 }
 
 .section-11 {
-  border-top: 1px solid #fff;
+  /*border-top: 1px solid #fff;*/
   padding-top: 48px;
 }
 
@@ -1539,7 +1545,7 @@
 }
 
 .section-14 {
-  border-top: 0.3px solid #fff;
+  /*border-top: 0.3px solid #fff;*/
   border-radius: 1px;
   padding-top: 30px;
 }
