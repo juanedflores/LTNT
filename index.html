@@ -37,6 +37,12 @@
   <link href="images/favicon.png" rel="apple-touch-icon" />
   <link href="css/custom.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="css/uikit.css" />
+
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.12/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.12/dist/js/uikit-icons.min.js"></script>
 </head>
 
 <body id="body_container" class="body">
@@ -838,8 +844,16 @@
       </div>
     </div>
   </section>
-  <section>
-    <div class="text-block-40">[ Social Media Mood Board Section]</div>
+  <section style="">
+    <div id="mood_board" class="w-layout-blockcontainer w-container" uk-scroll>
+      <img src="images/chaos/Chaos1.png" alt="" style="width: 20%; position: relative; top: 10%; left: 10%">
+      <img src="images/chaos/Chaos2.png" alt="" style="width: 20%; position: relative; top: 20%; left: 20%">
+      <img src="images/chaos/Chaos3.png" alt="" style="width: 20%; position: relative; top: 10%; left: 10%">
+      <img src="images/chaos/Chaos4.png" alt="" style="width: 20%; position: relative; top: 10%; left: 10%">
+      <img src="images/chaos/Chaos5.png" alt="" style="width: 20%; position: relative; top: 20%; left: 10%">
+      <img src="images/chaos/Chaos6.png" alt="" style="width: 20%; position: relative; top: 20%; left: 20%">
+      <img src="images/chaos/Chaos7.png" alt="" style="width: 20%; position: relative; top: 10%; left: 10%">
+    </div>
   </section>
   <section class="text">
     <div id="attack" class="w-layout-blockcontainer w-container">
@@ -1007,7 +1021,8 @@
     </div>
   </section>
   <section class="profiletook1">
-    <div class="w-layout-blockcontainer w-container">
+    <div class="w-layout-blockcontainer w-container"
+      uk-scrollspy="target: > div > .column-4; cls: uk-animation-slide-left; delay: 1000">
       <div class="columns-3 w-row">
         <div class="column-4 w-col w-col-4">
           <h1 class="heading-12">Alyona Hayrapetyan</h1>

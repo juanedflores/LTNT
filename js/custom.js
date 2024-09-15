@@ -1,3 +1,53 @@
+var mood_board_el = document.getElementById('mood_board');
+var board_img_list = [];
+var chaos_img = [
+  'images/chaos/Chaos1.png',
+  'images/chaos/Chaos2.png',
+  'images/chaos/Chaos3.png',
+  'images/chaos/Chaos4.png',
+  'images/chaos/Chaos5.png',
+  'images/chaos/Chaos6.png',
+  'images/chaos/Chaos7.png',
+  'images/chaos/Chaos8.png',
+  'images/chaos/Chaos9.png',
+  'images/chaos/Chaos10.png',
+  'images/chaos/Chaos11.png',
+  'images/chaos/Chaos12.png',
+  'images/chaos/Chaos13.png',
+  'images/chaos/Chaos14.png',
+  'images/chaos/Chaos15.png',
+  'images/chaos/Chaos16.png',
+  'images/chaos/Chaos17.png',
+  'images/chaos/Chaos18.png',
+  'images/chaos/Chaos19.png',
+  'images/chaos/Chaos20.png',
+  'images/chaos/Chaos21.png',
+];
+
+function randomNoRepeats(array) {
+  var copy = array.slice(0);
+  return function () {
+    if (copy.length < 1) {
+      copy = array.slice(0);
+    }
+    var index = Math.floor(Math.random() * copy.length);
+    var item = copy[index];
+    copy.splice(index, 1);
+    return item;
+  };
+}
+
+window.onload = function () {
+  for (var i = 0; i < mood_board_el.children.length; i++) {
+    const obj = {};
+    obj.el = mood_board_el.children[i];
+    obj.tick = Math.floor(Math.random() * 100) + 20;
+    board_img_list.push(obj);
+  }
+};
+
+var chooser = randomNoRepeats(chaos_img);
+
 var past_intro = 0;
 
 function scale(number, inMin, inMax, outMin, outMax) {
@@ -110,7 +160,7 @@ its Armenian inhabitants. Much of the physical cultural heritage sites
 were destroyed.`;
 
 sec6 = `Over the three year period reporting from Nagorno-Karabakh,
-there’s this one phrase (or senitment) that kept repeating when I.
+there’s this one phrase (or senitment) that kept repeating when 
 I asked how they dealt with the constant uncertainty, how they lived
 with the constant shadow of war and violence: they would always say:
 kartses te vary tchy kar “like there’s no tomorrow”.`;
@@ -204,7 +254,32 @@ document.addEventListener('scroll', (event) => {
   }
 
   Howler.volume(vol_norm);
+
+  if (isInViewport(mood_board_el)) {
+    for (var i = 0; i < board_img_list.length; i++) {
+      obj = board_img_list[i];
+      obj.tick++;
+      if (board_img_list[i].tick > 110) {
+        obj.tick = 0;
+        file = chooser();
+        el = $(board_img_list[i].el);
+        el.fadeOut('slow', function () {
+          obj.el.src = file;
+          el.fadeIn('slow');
+        });
+      }
+    }
+
+    console.log(mood_board_el.children.length);
+  }
 });
+
+// Mood board is in view
+function isInViewport(element) {
+  var rect = element.getBoundingClientRect();
+  var html = document.documentElement;
+  return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || html.clientHeight) && rect.right <= (window.innerWidth || html.clientWidth);
+}
 
 function moveLeft() {
   swiper.slidePrev();
@@ -237,3 +312,9 @@ function moveRight() {
     right_button.children[0].src = '/images/arrow_right.svg';
   }
 }
+
+UIkit.util.on('#mood_board', 'scrolled', function () {
+  alert('Done.');
+});
+
+scroll_el = UIkit.scrollspy('#mood_board');
