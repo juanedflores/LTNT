@@ -42,7 +42,7 @@ swiper.on('slideChangeTransitionEnd', function () {
 var script_index = 0;
 
 var sound = new Howl({
-  src: ['audio_files/voice_intro_full.wav'],
+  src: ['audio_files/astrig_intro.wav'],
   sprite: {
     track_01: [0, 5000],
     track_02: [5937, 10000],
@@ -51,8 +51,12 @@ var sound = new Howl({
     track_05: [61700, 22000],
     track_06: [85000, 31000],
     track_07: [116000, 19500],
-    track_08: [136000, 15000],
+    track_08: [136000, 17000],
   },
+});
+
+var ambience = new Howl({
+  src: ['audio_files/background_noise.wav'],
 });
 
 sound_array = ['track_01', 'track_02', 'track_03', 'track_04', 'track_05', 'track_06', 'track_07', 'track_08', 'track_09', 'track_10', 'track_11', 'track_12'];
@@ -142,6 +146,7 @@ document.getElementById('intro').addEventListener('click', function (e) {
   document.getElementById('intro').style.pointerEvents = 'none';
   typeWriter.deleteAll().callFunction(() => {
     sound.play(sound_array[script_index]);
+    ambience.play();
     script_index++;
     document.getElementById('intro').style.cursor = 'default';
     document.getElementById('intro').style.pointerEvents = 'none';
@@ -149,7 +154,6 @@ document.getElementById('intro').addEventListener('click', function (e) {
 
   // AFTER SCRIPT IS DONE
   if (script_index == script_array.length) {
-    console.log('reached the end');
     document.getElementsByTagName('body')[0].style = 'overflow: visible';
     typeWriter.deleteAll().callFunction(() => {
       $('#intro_div').fadeOut(1200);
@@ -166,7 +170,6 @@ document.getElementById('intro').addEventListener('click', function (e) {
       document.getElementById('intro').style.pointerEvents = 'auto';
     });
   }
-  console.log('Clicked on body');
 });
 
 menu_button = document.getElementById('menu_button');
@@ -181,12 +184,8 @@ menu_button.onclick = function () {
 
 var intro_height = $('#intro').height();
 var title_height = $('.title').height();
-console.log(intro_height);
 
 document.addEventListener('scroll', (event) => {
-  //console.log(document.body.scrollTop);
-  console.log(window.scrollY);
-
   vol = scale(scrollY, 0, intro_height, 1.0, 0.0);
   vol_norm = Math.min(Math.max(parseFloat(vol), 0.0), 1.0);
 
@@ -200,10 +199,41 @@ document.addEventListener('scroll', (event) => {
     if (past_intro == 0) {
       menu_button.click();
       past_intro = -1;
+      ambience.play();
     }
   }
 
   Howler.volume(vol_norm);
-
-  //console.log('hi');
 });
+
+function moveLeft() {
+  swiper.slidePrev();
+  left_button = document.getElementById('left');
+  right_button = document.getElementById('right');
+  if (swiper.isBeginning) {
+    left_button.children[0].src = '/images/arrow_left_muted.svg';
+  } else {
+    left_button.children[0].src = '/images/arrow_left.svg';
+  }
+  if (swiper.isEnd) {
+    right_button.children[0].src = '/images/arrow_right_muted.svg';
+  } else {
+    right_button.children[0].src = '/images/arrow_right.svg';
+  }
+}
+
+function moveRight() {
+  swiper.slideNext();
+  left_button = document.getElementById('left');
+  right_button = document.getElementById('right');
+  if (swiper.isBeginning) {
+    left_button.children[0].src = '/images/arrow_left_muted.svg';
+  } else {
+    left_button.children[0].src = '/images/arrow_left.svg';
+  }
+  if (swiper.isEnd) {
+    right_button.children[0].src = '/images/arrow_right_muted.svg';
+  } else {
+    right_button.children[0].src = '/images/arrow_right.svg';
+  }
+}
