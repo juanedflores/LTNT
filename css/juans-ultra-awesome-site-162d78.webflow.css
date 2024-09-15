@@ -701,7 +701,8 @@
 }
 
 .heading-8 {
-  color: #a48e6f;
+  /*color: #a48e6f;*/
+  color: #d50000;
   margin-top: 0;
   font-family: Merriweather, serif;
   font-weight: 300;

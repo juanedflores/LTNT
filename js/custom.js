@@ -4,6 +4,41 @@ function scale(number, inMin, inMax, outMin, outMax) {
   return ((number - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
 }
 
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: false,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+
+captions = document.getElementById('captions');
+var updateCaptions = function () {
+  var activeSlide = document.querySelector('div.swiper-slide-active');
+  var caption = activeSlide.dataset.caption;
+  if (activeSlide.hasAttribute('data-caption')) {
+    captions.innerHTML = caption;
+  }
+};
+
+swiper.on('slideChangeTransitionEnd', function () {
+  updateCaptions();
+});
+
 var script_index = 0;
 
 var sound = new Howl({
@@ -104,6 +139,7 @@ typeWriter.start().callFunction(() => {
 
 document.getElementById('intro').addEventListener('click', function (e) {
   sound.stop();
+  document.getElementById('intro').style.pointerEvents = 'none';
   typeWriter.deleteAll().callFunction(() => {
     sound.play(sound_array[script_index]);
     script_index++;
