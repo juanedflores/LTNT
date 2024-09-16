@@ -238,7 +238,7 @@ document.addEventListener('scroll', (event) => {
 
   if (scrollY > intro_height) {
     document.getElementById('menu_container').style.pointerEvents = 'auto';
-    document.getElementById('menu_container').style.left = vw_norm + 'vw';
+    document.getElementById('menu_container').style.left = '10%';
 
     if (past_intro == 0) {
       menu_button.click();

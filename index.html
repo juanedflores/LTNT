@@ -1043,7 +1043,7 @@
   </section>
   <section class="profiletook1">
     <div class="w-layout-blockcontainer w-container"
-      uk-scrollspy="target: > div > .column-4; cls: uk-animation-slide-left; delay: 1000">
+      uk-scrollspy="target: > div > .column-4; cls: uk-animation-slide-left; delay: 1000; repeat: true;">
       <div class="columns-3 w-row">
         <div class="column-4 w-col w-col-4">
           <h1 class="heading-12">Alyona Hayrapetyan</h1>
@@ -1055,8 +1055,8 @@
             srcset="images/Alyona-p-500.jpg 500w, images/Alyona-p-800.jpg 800w, images/Alyona-p-1080.jpg 1080w, images/Alyona-p-1600.jpg 1600w, images/Alyona-p-2000.jpg 2000w, images/Alyona-p-2600.jpg 2600w, images/Alyona-p-3200.jpg 3200w, images/Alyona.jpg 3473w"
             alt="" />
         </div>
-        <div class="w-col w-col-4">
-          <img src="images/Alyona_bookmarks.jpg" loading=""
+        <div class="w-col w-col-4" uk-scrollspy="target: > img; cls: uk-animation-fade; delay: 2000; repeat: true;">
+          <img src=" images/Alyona_bookmarks.jpg" loading=""
             sizes="(max-width: 479px) 29vw, (max-width: 767px) 30vw, (max-width: 991px) 229.3333282470703px, 300px"
             srcset="
                 images/Alyona_bookmarks-p-500.jpg   500w,
@@ -1081,8 +1081,10 @@
   </section>
   <section class="profiletook2">
     <div class="w-layout-blockcontainer w-container">
-      <div class="columns-3 w-row">
-        <div class="column-4 w-col w-col-4">
+      <div class="columns-3 w-row"
+        uk-scrollspy="target: > .column-5; cls: uk-animation-slide-right; delay: 1000; repeat: true">
+        <div class="column-4 w-col w-col-4"
+          uk-scrollspy="target: > img; cls: uk-animation-fade; delay: 2000; repeat: true">
           <img src="images/Gayane_photo.jpg" loading=""
             sizes="(max-width: 479px) 29vw, (max-width: 767px) 30vw, (max-width: 991px) 229.3333282470703px, 300px"
             srcset="
@@ -1104,7 +1106,7 @@
         </div>
         <div class="column-5 w-col w-col-4">
           <h1 class="heading-12-copy">Gayane Sargsyan</h1>
-          <div class="text-block-43">29 years old. <br />From Stepanakert.</div>
+          <div class="text-block-43" style="width: 100%">29 years old. <br />From Stepanakert.</div>
         </div>
       </div>
     </div>
