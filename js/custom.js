@@ -288,14 +288,14 @@ function moveLeft() {
   left_button = document.getElementById('left');
   right_button = document.getElementById('right');
   if (swiper.isBeginning) {
-    left_button.children[0].src = '/images/arrow_left_muted.svg';
+    left_button.children[0].src = 'images/arrow_left_muted.svg';
   } else {
-    left_button.children[0].src = '/images/arrow_left.svg';
+    left_button.children[0].src = 'images/arrow_left.svg';
   }
   if (swiper.isEnd) {
-    right_button.children[0].src = '/images/arrow_right_muted.svg';
+    right_button.children[0].src = 'images/arrow_right_muted.svg';
   } else {
-    right_button.children[0].src = '/images/arrow_right.svg';
+    right_button.children[0].src = 'images/arrow_right.svg';
   }
 }
 
@@ -304,14 +304,14 @@ function moveRight() {
   left_button = document.getElementById('left');
   right_button = document.getElementById('right');
   if (swiper.isBeginning) {
-    left_button.children[0].src = '/images/arrow_left_muted.svg';
+    left_button.children[0].src = 'images/arrow_left_muted.svg';
   } else {
-    left_button.children[0].src = '/images/arrow_left.svg';
+    left_button.children[0].src = 'images/arrow_left.svg';
   }
   if (swiper.isEnd) {
-    right_button.children[0].src = '/images/arrow_right_muted.svg';
+    right_button.children[0].src = 'images/arrow_right_muted.svg';
   } else {
-    right_button.children[0].src = '/images/arrow_right.svg';
+    right_button.children[0].src = 'images/arrow_right.svg';
   }
 }
 
