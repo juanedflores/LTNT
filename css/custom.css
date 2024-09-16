@@ -92,6 +92,16 @@ body {
   width: 100%;
 }
 
+.block-quote {
+  font-size: 30px;
+  line-height: 40px;
+  letter-spacing: 2px;
+  padding: 20px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  width: 100%;
+}
+
 @media screen and (max-width: 800px) {
   body {
     max-width: 100%;
@@ -261,5 +271,92 @@ body {
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .text-copy {
+    padding-bottom: 0;
+  }
+
+  .quick-stack-2-copy {
+    padding: 20px;
+  }
+
+  .section-15 {
+    padding: 20px;
+  }
+
+  .section-14 {
+    padding: 20px;
+  }
+
+  .text-block-42 {
+    padding-bottom: 20px;
+  }
+
+  img {
+    padding-bottom: 20px;
+  }
+
+  #mood_board {
+    padding: 20px;
+  }
+
+  .text-block-18 {
+    padding: 20px;
+  }
+
+  .div-block-18 {
+    height: auto;
+  }
+
+  .quick-stack-5 {
+    padding: 20px;
+  }
+
+  .quick-stack-6 {
+    padding: 20px;
+  }
+
+  .profiler {
+    height: auto;
+  }
+
+  .caption_profile {
+    position: static;
+    /*width: 0;*/
+  }
+
+  .image-15-copy {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .div-block-17 {
+    width: auto;
+  }
+
+  .text-block-17 {
+    display: none;
+  }
+
+  .text-block-17-copy {
+    display: none;
+  }
+
+  .div-block-16 {
+    padding: 20px;
+  }
+
+  .div-block-15 {
+    height: auto;
+  }
+
+  .text-block-20-copy {
+    padding: 20px;
+  }
+
+  .column-3 {
+    float: none;
+    padding: 20px;
   }
 }
