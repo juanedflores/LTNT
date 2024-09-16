@@ -8,13 +8,6 @@ var chaos_img = [
   'images/chaos/Chaos5.png',
   'images/chaos/Chaos6.png',
   'images/chaos/Chaos7.png',
-  'images/chaos/Chaos8.png',
-  'images/chaos/Chaos9.png',
-  'images/chaos/Chaos10.png',
-  'images/chaos/Chaos11.png',
-  'images/chaos/Chaos12.png',
-  'images/chaos/Chaos13.png',
-  'images/chaos/Chaos14.png',
   'images/chaos/Chaos15.png',
   'images/chaos/Chaos16.png',
   'images/chaos/Chaos17.png',
@@ -41,7 +34,7 @@ window.onload = function () {
   for (var i = 0; i < mood_board_el.children.length; i++) {
     const obj = {};
     obj.el = mood_board_el.children[i];
-    obj.tick = Math.floor(Math.random() * 100) + 20;
+    obj.tick = Math.floor(Math.random() * 100);
     board_img_list.push(obj);
   }
 };
@@ -235,6 +228,7 @@ menu_button.onclick = function () {
 var intro_height = $('#intro').height();
 var title_height = $('.title').height();
 
+// SCROLL INTERACTION
 document.addEventListener('scroll', (event) => {
   vol = scale(scrollY, 0, intro_height, 1.0, 0.0);
   vol_norm = Math.min(Math.max(parseFloat(vol), 0.0), 1.0);
@@ -249,23 +243,31 @@ document.addEventListener('scroll', (event) => {
     if (past_intro == 0) {
       menu_button.click();
       past_intro = -1;
-      ambience.play();
     }
   }
 
   Howler.volume(vol_norm);
 
+  // MOOD BOARD
+  console.log(isInViewport(mood_board_el));
   if (isInViewport(mood_board_el)) {
     for (var i = 0; i < board_img_list.length; i++) {
       obj = board_img_list[i];
       obj.tick++;
-      if (board_img_list[i].tick > 110) {
+      if (board_img_list[i].tick > 109) {
         obj.tick = 0;
         file = chooser();
-        el = $(board_img_list[i].el);
+        img = board_img_list[i].el.children[0];
+        el = $(img);
+        console.log(img);
+        console.log(el);
         el.fadeOut('slow', function () {
-          obj.el.src = file;
           el.fadeIn('slow');
+          img.src = file;
+          rndTop = Math.floor(Math.random() * 60);
+          rndLeft = Math.floor(Math.random() * 60);
+          img.style.top = rndTop + '%';
+          img.style.left = rndLeft + '%';
         });
       }
     }
@@ -312,9 +314,5 @@ function moveRight() {
     right_button.children[0].src = '/images/arrow_right.svg';
   }
 }
-
-UIkit.util.on('#mood_board', 'scrolled', function () {
-  alert('Done.');
-});
 
 scroll_el = UIkit.scrollspy('#mood_board');
