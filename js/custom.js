@@ -34,7 +34,7 @@ window.onload = function () {
   for (var i = 0; i < mood_board_el.children.length; i++) {
     const obj = {};
     obj.el = mood_board_el.children[i];
-    obj.tick = Math.floor(Math.random() * 100);
+    obj.tick = Math.floor(Math.random() * 40) + 65;
     board_img_list.push(obj);
   }
 };
