@@ -178,6 +178,21 @@ for (var i = 0; i < stringArray.length; i++) {
   typeWriter.pasteString(stringArray[i] + ' ');
 }
 
+$(document.getElementById('intro_container')).mousemove(function (e) {
+  var offset = $(this).offset().top;
+  var this_height = $(this).height();
+  var Y = e.pageY;
+  var loc = Math.abs(offset - Y);
+  console.log(loc);
+  if (loc < this_height - this_height / 6) {
+    console.log('above');
+    $(document.getElementById('intro_down_arrow')).fadeOut();
+  } else {
+    console.log('below');
+    $(document.getElementById('intro_down_arrow')).fadeIn();
+  }
+});
+
 menu_button = document.getElementById('menu_button');
 typeWriter.start().callFunction(() => {
   document.getElementById('intro').style.cursor = 'pointer';

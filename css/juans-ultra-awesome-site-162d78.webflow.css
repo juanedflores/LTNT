@@ -538,6 +538,7 @@
   font-family: Open Sans, sans-serif;
   font-size: 43px;
   font-weight: 400;
+  padding-top: 10vh;
 }
 
 .section-5 {
@@ -636,7 +637,7 @@
   object-fit: fill;
   background-color: #151820;
   width: 100vw;
-  height: 90vh;
+  /*height: 90vh;*/
   margin-left: auto;
   margin-right: auto;
   display: block;

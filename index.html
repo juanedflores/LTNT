@@ -79,7 +79,7 @@
   </div>
 
   <div id="intro" class="w-layout-blockcontainer landingpage w-container">
-    <div
+    <div id="intro_container"
       data-poster-url="https://uploads-ssl.webflow.com/63728c5602f88f03640b4142%2F66c33929c1454bef89db84a4_Video1_exodus_AWP26-poster-00001.jpg"
       data-video-urls="https://uploads-ssl.webflow.com/63728c5602f88f03640b4142%2F66c33929c1454bef89db84a4_Video1_exodus_AWP26-transcode.mp4,https://uploads-ssl.webflow.com/63728c5602f88f03640b4142%2F66c33929c1454bef89db84a4_Video1_exodus_AWP26-transcode.webm"
       data-autoplay="true" data-loop="true" data-wf-ignore="true"
@@ -101,6 +101,8 @@
             <button id="button_elem" type="button" style="background: 0;">
               <p id="key_button_text" style="font-style: italic;">[ click to read more ]</p>
             </button>
+            <button id="intro_down_arrow" class="" style="width: 10vw; background: rgba(0, 0, 0, 0);"
+              onclick="moveLeft()"><img src="images/down_arrow.svg" alt=""></button>
           </div>
       </div>
     </div>
@@ -112,7 +114,7 @@
       <p style="height: 40vh; display: flex; align-items: center; justify-content: center; color: white;">by Astrig</p>
     </div>
   </div>
-  <div class="w-layout-blockcontainer linearfadedown w-container"></div>
+  <div class="w-layout-blockcontainer linearfadedown w-container" style="display: none;"></div>
   <div class="w-layout-blockcontainer background w-container">
     <div class="w-layout-blockcontainer w-container">
       <img src="images/landingpage.jpg" loading="" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px"
@@ -131,8 +133,7 @@
   <section class="img">
     <div class="w-layout-blockcontainer container-9 w-container">
       <img src="images/nk-map_update.png" loading="" width="800" height="Auto" alt=""
-        srcset="images/nk-map_update.png 500w, images/Screen-Shot-2024-08-19-at-8.32.41-AM-p-800.png 800w, images/Screen-Shot-2024-08-19-at-8.32.41-AM.png 940w"
-        sizes="(max-width: 767px) 100vw, 500px" class="image-10" />
+        sizes="(max-width: 767px) 100vw, 500px" class="image-10" style="padding-top: 10vh; padding-bottom: 10vh" />
     </div>
   </section>
   <section class="text">

@@ -67,6 +67,11 @@ body {
   font-size: 20px;
 }
 
+#intro_down_arrow {
+  position: absolute;
+  bottom: 1%;
+}
+
 #key_button_text {
   padding: 20px;
 }
