@@ -128,7 +128,7 @@ onto their keys until their very last breath, dreaming of
 going back to homes which had been destroyed a long time ago. 
 `;
 
-sec3 = `Part of the Armenia heritage is a series of traumas
+sec3 = `Part of the Armenian heritage is a series of traumas
 and pain that carry on from one generation to another. Historically,
 Armenians resided in Eastern Anatolia, in regions that were once part
 of the Ottoman Empire, now modern Turkey. Those who survived during
@@ -187,12 +187,15 @@ typeWriter.start().callFunction(() => {
 document.getElementById('intro').addEventListener('click', function (e) {
   sound.stop();
   document.getElementById('intro').style.pointerEvents = 'none';
+
   typeWriter.deleteAll().callFunction(() => {
+    document.getElementById('button_elem').style.display = 'none';
     sound.play(sound_array[script_index]);
     ambience.play();
     script_index++;
     document.getElementById('intro').style.cursor = 'default';
     document.getElementById('intro').style.pointerEvents = 'none';
+    document.getElementById('intro_text').style.textAlign = 'left';
   });
 
   // AFTER SCRIPT IS DONE
@@ -208,6 +211,7 @@ document.getElementById('intro').addEventListener('click', function (e) {
       typeWriter.pasteString(stringArray[i] + ' ');
     }
     typeWriter.start().callFunction(() => {
+      document.getElementById('button_elem').style.display = 'block';
       document.getElementById('intro').style.cursor = 'pointer';
       //menu_button.setAttribute('data-src', 'documents/key_menu_white.json');
       document.getElementById('intro').style.pointerEvents = 'auto';
@@ -215,15 +219,31 @@ document.getElementById('intro').addEventListener('click', function (e) {
   }
 });
 
+menu_button_container = document.getElementById('menu_container');
 menu_button = document.getElementById('menu_button');
-menu_button.onclick = function () {
+menu_button_container.onmouseenter = function () {
   menu_list = document.getElementById('menu_list');
+
+  menu_button.click();
   if (menu_list.style.visibility === 'hidden') {
     menu_list.style.visibility = 'visible';
   } else {
     menu_list.style.visibility = 'hidden';
   }
 };
+
+menu_button_container.onmouseleave = function () {
+  menu_list = document.getElementById('menu_list');
+
+  menu_button.click();
+  if (menu_list.style.visibility === 'visible') {
+    menu_list.style.visibility = 'hidden';
+  } else {
+    menu_list.style.visibility = 'visible';
+  }
+};
+
+//menu_bu
 
 var intro_height = $('#intro').height();
 var title_height = $('.title').height();
@@ -238,10 +258,10 @@ document.addEventListener('scroll', (event) => {
 
   if (scrollY > intro_height) {
     document.getElementById('menu_container').style.pointerEvents = 'auto';
-    document.getElementById('menu_container').style.left = '10%';
+    document.getElementById('menu_container').style.left = '90%';
 
     if (past_intro == 0) {
-      menu_button.click();
+      //menu_button.click();
       past_intro = -1;
     }
   }

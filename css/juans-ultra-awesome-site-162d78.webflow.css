@@ -420,7 +420,7 @@
   margin-right: auto;
   display: flex;
   position: relative;
-  top: -120px;
+  bottom: 16vh;
   overflow: visible;
 }
 
@@ -1196,9 +1196,9 @@
   max-width: 94%;
   display: flex;
   position: fixed;
-  left: 50%;
   transform: translate(-50%, 0%);
-  bottom: 20vh;
+  bottom: 10%;
+  left: 50%;
   /*left: 2vw;*/
   float: right;
   pointer-events: none;
