@@ -81,6 +81,12 @@ video::-webkit-media-controls-start-playback-button {
   grid-column: span 2;
 }
 
+#ending_image {
+  /*background-image: url('../images/DSC00160.jpg');*/
+  /*width: 100%;*/
+  animation-duration: 5000ms;
+}
+
 #mute_button {
   position: absolute;
   width: 80px;
