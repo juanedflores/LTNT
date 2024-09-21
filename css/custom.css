@@ -73,6 +73,20 @@ body {
   display: none;
 }
 
+video::-webkit-media-controls-start-playback-button {
+  display: none;
+}
+
+#mute_button {
+  position: absolute;
+  width: 80px;
+  bottom: 1%;
+  display: block;
+  left: 4%;
+  bottom: 10%;
+  z-index: 9999;
+}
+
 #key_button_text {
   padding: 20px;
 }

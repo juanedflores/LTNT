@@ -156,7 +156,7 @@ sec6 = `Over the three year period reporting from Nagorno-Karabakh,
 there’s this one phrase (or senitment) that kept repeating when 
 I asked how they dealt with the constant uncertainty, how they lived
 with the constant shadow of war and violence: they would always say:
-kartses te vary tchy kar “like there’s no tomorrow”.`;
+Կարծես թե վաղը չկար “like there’s no tomorrow”.`;
 
 sec7 = `This website tells the stories of people, who just like my own
 grandparents and great-grandparents had left, holding keys to homes
@@ -201,7 +201,7 @@ typeWriter.start().callFunction(() => {
 
 document.getElementById('intro').addEventListener('click', function (e) {
   sound.stop();
-  document.getElementById('intro').style.pointerEvents = 'none';
+  //document.getElementById('intro').style.pointerEvents = 'none';
 
   typeWriter.deleteAll().callFunction(() => {
     document.getElementById('button_elem').style.display = 'none';
@@ -209,7 +209,7 @@ document.getElementById('intro').addEventListener('click', function (e) {
     ambience.play();
     script_index++;
     document.getElementById('intro').style.cursor = 'default';
-    document.getElementById('intro').style.pointerEvents = 'none';
+    //document.getElementById('intro').style.pointerEvents = 'none';
     document.getElementById('intro_text').style.textAlign = 'left';
   });
 
@@ -227,7 +227,7 @@ document.getElementById('intro').addEventListener('click', function (e) {
     }
     typeWriter.start().callFunction(() => {
       document.getElementById('button_elem').style.display = 'block';
-      document.getElementById('intro').style.cursor = 'pointer';
+      //document.getElementById('intro').style.cursor = 'pointer';
       //menu_button.setAttribute('data-src', 'documents/key_menu_white.json');
       document.getElementById('intro').style.pointerEvents = 'auto';
     });
@@ -351,3 +351,18 @@ function moveRight() {
 }
 
 scroll_el = UIkit.scrollspy('#mood_board');
+
+function sound_button() {
+  console.log('Clicked on mute');
+  img_src = document.getElementById('mute_button').getAttribute('src');
+  console.log(img_src);
+  if (img_src == 'images/sound_on.svg') {
+    document.getElementById('mute_button').src = 'images/sound_off.svg';
+    ambience.mute(true);
+    sound.mute(true);
+  } else {
+    document.getElementById('mute_button').src = 'images/sound_on.svg';
+    ambience.mute(false);
+    sound.mute(false);
+  }
+}
