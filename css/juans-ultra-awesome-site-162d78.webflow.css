@@ -1575,7 +1575,7 @@
 .text-copy {
   border: 1px #000;
   height: auto;
-  padding-bottom: 54px;
+  /*padding-bottom: 54px;*/
 }
 
 .columns-2 {

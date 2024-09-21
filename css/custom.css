@@ -39,6 +39,19 @@ body {
   }
 }
 
+#key_text {
+  align-items: center;
+  margin: auto;
+}
+
+#sectheading {
+  align-self: flex-start;
+}
+
+#w-node-_3ec08bc1-7e2a-bb8b-820e-afc3201ff179-c00b4143 {
+  padding-bottom: 0;
+}
+
 #intro_text {
   width: 40vw;
   text-align: center;
