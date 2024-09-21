@@ -1026,7 +1026,6 @@
   float: left;
   text-align: left;
   width: 80%;
-  padding-left: 20px;
   position: static;
   left: 15px;
   right: 0;
@@ -1046,8 +1045,8 @@
   text-decoration: none;
   display: flex;
   position: relative;
-  top: 330px;
-  left: 100px;
+  top: 100px;
+  left: 68px;
   overflow: visible;
 }
 
@@ -1099,7 +1098,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  padding-top: 31px;
+  /*padding-top: 31px;*/
   font-family: Tahoma, Verdana, Segoe, sans-serif;
   font-size: 16px;
   display: flex;
@@ -1154,7 +1153,7 @@
 
 .caption_profile.new_cption {
   top: 147px;
-  left: -11px;
+  left: 10px;
 }
 
 .text-block-19 {
@@ -1219,7 +1218,7 @@
 
 .section-11 {
   /*border-top: 1px solid #fff;*/
-  padding-top: 48px;
+  /*padding-top: 48px;*/
 }
 
 .section-12 {
@@ -1345,7 +1344,6 @@
   float: right;
   text-align: left;
   width: 80%;
-  padding-right: 20px;
   position: static;
   left: 15px;
   right: 0;
@@ -1357,7 +1355,7 @@
 
 .section-12-copy,
 .section-12-copy-copy {
-  padding-top: 41px;
+  padding-top: 0px;
 }
 
 .container-17 {
@@ -1902,7 +1900,7 @@
   }
 
   .text-block-18 {
-    padding-bottom: 49px;
+    padding-bottom: 0px;
   }
 
   .image-16 {
