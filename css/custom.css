@@ -77,6 +77,10 @@ video::-webkit-media-controls-start-playback-button {
   display: none;
 }
 
+#grid_video {
+  grid-column: span 2;
+}
+
 #mute_button {
   position: absolute;
   width: 80px;
