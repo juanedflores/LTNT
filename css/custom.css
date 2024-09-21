@@ -70,6 +70,7 @@ body {
 #intro_down_arrow {
   position: absolute;
   bottom: 1%;
+  display: none;
 }
 
 #key_button_text {
