@@ -153,7 +153,7 @@ its Armenian inhabitants. Much of the physical cultural heritage sites
 were destroyed.`;
 
 sec6 = `Over the three year period reporting from Nagorno-Karabakh,
-there’s this one phrase (or senitment) that kept repeating when 
+there’s this one phrase that kept repeating when 
 I asked how they dealt with the constant uncertainty, how they lived
 with the constant shadow of war and violence: they would always say:
 Կարծես թե վաղը չկար “like there’s no tomorrow”.`;
