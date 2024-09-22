@@ -229,3 +229,273 @@ stringArray = stringSplitter(empty_string);
 for (var i = 0; i < stringArray.length; i++) {
   typeWriter.pasteString(stringArray[i] + ' ');
 }
+
+$(document.getElementById('intro_container')).mousemove(function (e) {
+  var offset = $(this).offset().top;
+  var this_height = $(this).height();
+  var Y = e.pageY;
+  var loc = Math.abs(offset - Y);
+  console.log(loc);
+  if (loc < this_height - this_height / 6) {
+    console.log('above');
+    $(document.getElementById('intro_down_arrow')).fadeOut();
+  } else {
+    console.log('below');
+    $(document.getElementById('intro_down_arrow')).fadeIn();
+  }
+});
+
+menu_button = document.getElementById('menu_button');
+typeWriter.start().callFunction(() => {
+  document.getElementById('intro').style.cursor = 'pointer';
+  //menu_button.setAttribute('data-src', 'documents/key_menu_white.json');
+});
+
+document.getElementById('intro').addEventListener('click', function (e) {
+  //document.getElementById('button_elem').addEventListener('click', function (e) {
+  //document.getElementById('intro').style.pointerEvents = 'none';
+
+  vw = document.documentElement.clientWidth;
+  thresh1 = vw * 0.2;
+  thresh2 = vw * 0.8;
+  if (event.clientX > thresh1 && event.clientX < thresh2) {
+    sound.stop();
+    typeWriter.deleteAll().callFunction(() => {
+      document.getElementById('button_elem').style.display = 'none';
+      sound.play(sound_array[script_index]);
+      ambience.play();
+      script_index++;
+      document.getElementById('intro').style.cursor = 'default';
+      //document.getElementById('intro').style.pointerEvents = 'none';
+      document.getElementById('intro_text').style.textAlign = 'left';
+    });
+
+    // AFTER SCRIPT IS DONE
+    if (script_index == script_array.length) {
+      document.getElementsByTagName('body')[0].style = 'overflow: visible';
+      typeWriter.deleteAll().callFunction(() => {
+        $('#intro_div').fadeOut(1200);
+      });
+    } else {
+      // Write Text
+      stringArray = stringSplitter(script_array[script_index]);
+      for (var i = 0; i < stringArray.length; i++) {
+        typeWriter.pasteString(stringArray[i] + ' ');
+      }
+      typeWriter.start().callFunction(() => {
+        document.getElementById('button_elem').style.display = 'block';
+        //document.getElementById('intro').style.cursor = 'pointer';
+        //menu_button.setAttribute('data-src', 'documents/key_menu_white.json');
+        document.getElementById('intro').style.pointerEvents = 'auto';
+      });
+    }
+  }
+});
+
+menu_button_container = document.getElementById('menu_container');
+menu_button = document.getElementById('menu_button');
+menu_button_container.onmouseenter = function () {
+  menu_list = document.getElementById('menu_list');
+
+  menu_button.click();
+  if (menu_list.style.visibility === 'hidden') {
+    menu_list.style.visibility = 'visible';
+  } else {
+    menu_list.style.visibility = 'hidden';
+  }
+};
+
+menu_button_container.onmouseleave = function () {
+  menu_list = document.getElementById('menu_list');
+
+  menu_button.click();
+  if (menu_list.style.visibility === 'visible') {
+    menu_list.style.visibility = 'hidden';
+  } else {
+    menu_list.style.visibility = 'visible';
+  }
+};
+
+//menu_bu
+
+var intro_height = $('#intro').height();
+var title_height = $('.title').height();
+
+// SCROLL INTERACTION
+document.addEventListener('scroll', (event) => {
+  vol = scale(scrollY, 0, intro_height, 1.0, 0.0);
+  vol_norm = Math.min(Math.max(parseFloat(vol), 0.0), 1.0);
+
+  vw = scale(scrollY, 0, 1000, 50.0, 5.0);
+  vw_norm = Math.min(Math.max(parseFloat(vol), 5.0), 50.0);
+
+  if (scrollY > intro_height) {
+    document.getElementById('menu_container').style.pointerEvents = 'auto';
+    document.getElementById('menu_container').style.left = '90%';
+    document.getElementById('menu_button').style.visibility = 'visible';
+
+    if (past_intro == 0) {
+      //menu_button.click();
+      past_intro = -1;
+    }
+  }
+
+  Howler.volume(vol_norm);
+
+  // MOOD BOARD
+  console.log(isInViewport(mood_board_el));
+  if (isInViewport(mood_board_el)) {
+    for (var i = 0; i < board_img_list.length; i++) {
+      obj = board_img_list[i];
+      obj.tick++;
+      if (board_img_list[i].tick > 109) {
+        obj.tick = 0;
+        file = chooser();
+        img = board_img_list[i].el.children[0];
+        el = $(img);
+        console.log(img);
+        console.log(el);
+        el.fadeOut('slow', function () {
+          el.fadeIn('slow');
+          img.src = file;
+          rndTop = Math.floor(Math.random() * 60);
+          rndLeft = Math.floor(Math.random() * 60);
+          img.style.top = rndTop + '%';
+          img.style.left = rndLeft + '%';
+        });
+      }
+    }
+
+    console.log(mood_board_el.children.length);
+  }
+});
+
+// Mood board is in view
+function isInViewport(element) {
+  var rect = element.getBoundingClientRect();
+  var html = document.documentElement;
+  return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || html.clientHeight) && rect.right <= (window.innerWidth || html.clientWidth);
+}
+
+function moveLeft() {
+  swiper.slidePrev();
+  left_button = document.getElementById('left');
+  right_button = document.getElementById('right');
+  if (swiper.isBeginning) {
+    left_button.children[0].src = 'images/arrow_left_muted.svg';
+  } else {
+    left_button.children[0].src = 'images/arrow_left.svg';
+  }
+  if (swiper.isEnd) {
+    right_button.children[0].src = 'images/arrow_right_muted.svg';
+  } else {
+    right_button.children[0].src = 'images/arrow_right.svg';
+  }
+}
+
+function moveRight() {
+  swiper.slideNext();
+  left_button = document.getElementById('left');
+  right_button = document.getElementById('right');
+  if (swiper.isBeginning) {
+    left_button.children[0].src = 'images/arrow_left_muted.svg';
+  } else {
+    left_button.children[0].src = 'images/arrow_left.svg';
+  }
+  if (swiper.isEnd) {
+    right_button.children[0].src = 'images/arrow_right_muted.svg';
+  } else {
+    right_button.children[0].src = 'images/arrow_right.svg';
+  }
+}
+
+scroll_el = UIkit.scrollspy('#mood_board');
+
+function sound_button() {
+  console.log('Clicked on mute');
+  img_src = document.getElementById('mute_button').getAttribute('src');
+  console.log(img_src);
+  if (img_src == 'images/sound_on.svg') {
+    document.getElementById('mute_button').src = 'images/sound_off.svg';
+    ambience.mute(true);
+    sound.mute(true);
+  } else {
+    document.getElementById('mute_button').src = 'images/sound_on.svg';
+    ambience.mute(false);
+    sound.mute(false);
+  }
+}
+
+portrait_div = document.getElementById('key_portrait_container');
+portrait_img = document.getElementById('key_portrait');
+
+function key_button_1() {
+  console.log('tets');
+  portrait_div.style.display = 'block';
+  portrait_div.style.width = '48%';
+  portrait_img.src = 'images/keys/AnnaHayryan.jpg';
+  setTimeout(() => {
+    portrait_div.style.opacity = '1';
+  }, '1000');
+}
+
+function key_button_2() {
+  console.log('tets');
+  portrait_div.style.display = 'block';
+  portrait_div.style.width = '48%';
+  portrait_img.src = 'images/keys/AnnaShaburyan.jpg';
+  setTimeout(() => {
+    portrait_div.style.opacity = '1';
+  }, '1000');
+}
+
+function key_button_3() {
+  console.log('tets');
+  portrait_div.style.display = 'block';
+  portrait_div.style.width = '48%';
+  portrait_img.src = 'images/keys/ArminéShadyan.jpg';
+  setTimeout(() => {
+    portrait_div.style.opacity = '1';
+  }, '1000');
+}
+
+function key_button_4() {
+  console.log('tets');
+  portrait_div.style.display = 'block';
+  portrait_div.style.width = '48%';
+  portrait_img.src = 'images/keys/GemmaAvanesyan.jpg';
+  setTimeout(() => {
+    portrait_div.style.opacity = '1';
+  }, '1000');
+}
+
+function key_button_5() {
+  console.log('tets');
+  portrait_div.style.display = 'block';
+  portrait_div.style.width = '48%';
+  portrait_img.src = 'images/keys/LiraPetrosyan.jpg';
+  setTimeout(() => {
+    portrait_div.style.opacity = '1';
+  }, '1000');
+}
+
+function key_button_6() {
+  console.log('tets');
+  portrait_div.style.display = 'block';
+  //portrait_div.style.visibility = 'visible';
+  portrait_div.style.width = '48%';
+  portrait_img.src = 'images/keys/MarinaAhanoryan.jpg';
+  setTimeout(() => {
+    portrait_div.style.opacity = '1';
+  }, '1000');
+}
+
+function key_button_7() {
+  console.log('tets');
+  portrait_div.style.display = 'block';
+  portrait_div.style.width = '48%';
+  portrait_img.src = 'images/keys/NairaandAnnaShaburyan.jpg';
+  setTimeout(() => {
+    portrait_div.style.opacity = '1';
+  }, '1000');
+}
