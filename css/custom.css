@@ -224,6 +224,10 @@ video::-webkit-media-controls-start-playback-button {
   visibility: visible;
 }
 
+#menu_list {
+  font-size: 14px;
+}
+
 .linearfadedown {
   display: block;
 }

@@ -52,7 +52,7 @@
     <!--<div style="postition: sticky;">-->
     <ul id="menu_list" role="list" class="list-2" style="visibility: hidden;">
       <li class="w-clearfix">
-        <a href="#intro" class="button w-button">Intro</a>
+        <a href="#intro" onclick='replay_Intro()' class="button w-button">Intro</a>
       </li>
       <li class="w-clearfix">
         <a href="#life_before" class="button w-button">Life Before in NK</a>
@@ -103,8 +103,11 @@
             <button id="button_elem" type="button" style="background: 0;">
               <p id="key_button_text" style="font-style: italic;">[ click to read more ]</p>
             </button>
-            <button id="intro_down_arrow" class="" style="width: 10vw; background: rgba(0, 0, 0, 0);"><img
-                src="images/down_arrow.svg" alt=""></button>
+            <div id="intro_down_arrow">
+              <button class="" style="width: 10vw; background: rgba(0, 0, 0, 0);">
+                <img src="images/down_arrow.svg" alt=""></button>
+              <p style="text-align: center; position: relative; top: -60px;">scroll down to enter site</p>
+            </div>
             <button onclick="sound_button()" class="" style="background: rgba(0, 0, 0, 0);"><img id="mute_button"
                 src="images/sound_on.svg" alt=""></button>
           </div>

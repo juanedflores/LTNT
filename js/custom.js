@@ -2,6 +2,7 @@ const slidesContainer = document.getElementById('slides-container');
 const slide = document.querySelector('.slide');
 const prevButton = document.getElementById('slide-arrow-prev');
 const nextButton = document.getElementById('slide-arrow-next');
+script_done = 0;
 
 whats_cap = document.getElementById('whats_caption');
 
@@ -210,7 +211,7 @@ were destroyed.`;
 sec8 = `Over the three year period reporting from Nagorno-Karabakh,
 there’s this one phrase that kept repeating when 
 I asked how they dealt with the constant uncertainty, how they lived
-with the constant shadow of war and violence: they would always say:<br><br>
+with the constant shadow of war and violence. They would always say:<br><br>
 Կարծես թե վաղը չկար<br><br>“like there’s no tomorrow”`;
 
 sec9 = `This website tells the stories of people, who just like my own
@@ -239,7 +240,7 @@ $(document.getElementById('intro_container')).mousemove(function (e) {
   var Y = e.pageY;
   var loc = Math.abs(offset - Y);
   console.log(loc);
-  if (loc < this_height - this_height / 6) {
+  if (loc < this_height - this_height / 6 && script_done == 0) {
     console.log('above');
     $(document.getElementById('intro_down_arrow')).fadeOut();
   } else {
@@ -276,10 +277,17 @@ document.getElementById('intro').addEventListener('click', function (e) {
 
     // AFTER SCRIPT IS DONE
     if (script_index == script_array.length) {
-      document.getElementsByTagName('body')[0].style = 'overflow: visible';
-      typeWriter.deleteAll().callFunction(() => {
-        $('#intro_div').fadeOut(1200);
-      });
+      script_done = 1;
+      script_index = 0;
+      console.log('reached the end');
+      //document.getElementsByTagName('body')[0].style = 'overflow: visible';
+      //typeWriter.deleteAll().callFunction(() => {
+      //  $('#intro_div').fadeOut(1200);
+      //});
+      $('#intro_text').fadeOut(1200);
+      $('#button_elem').fadeOut(700);
+      menu_list.style.visibility = 'visible';
+      $('#intro_down_arrow').fadeIn(1200);
     } else {
       // Write Text
       stringArray = stringSplitter(script_array[script_index]);
@@ -300,24 +308,22 @@ menu_button_container = document.getElementById('menu_container');
 menu_button = document.getElementById('menu_button');
 menu_button_container.onmouseenter = function () {
   menu_list = document.getElementById('menu_list');
-
   menu_button.click();
-  if (menu_list.style.visibility === 'hidden') {
-    menu_list.style.visibility = 'visible';
-  } else {
-    menu_list.style.visibility = 'hidden';
-  }
+  //if (menu_list.style.visibility === 'hidden') {
+  menu_list.style.visibility = 'visible';
+  //} else {
+  //  menu_list.style.visibility = 'hidden';
+  //}
 };
 
 menu_button_container.onmouseleave = function () {
   menu_list = document.getElementById('menu_list');
-
   menu_button.click();
-  if (menu_list.style.visibility === 'visible') {
-    menu_list.style.visibility = 'hidden';
-  } else {
-    menu_list.style.visibility = 'visible';
-  }
+  //if (menu_list.style.visibility === 'visible') {
+  menu_list.style.visibility = 'hidden';
+  //} else {
+  //  menu_list.style.visibility = 'visible';
+  //}
 };
 
 //menu_bu
@@ -502,4 +508,30 @@ function key_button_7() {
   setTimeout(() => {
     portrait_div.style.opacity = '1';
   }, '1000');
+}
+
+function replay_Intro() {
+  console.log('replaying intro');
+  script_index = 0;
+  if (script_done) {
+    script_done = 0;
+    $('#intro_text').fadeIn(1200);
+    $('#button_elem').fadeIn(700);
+    stringArray = stringSplitter(script_array[script_index]);
+    for (var i = 0; i < stringArray.length; i++) {
+      typeWriter.pasteString(stringArray[i] + ' ');
+    }
+    typeWriter.start();
+  } else {
+    script_done = 0;
+    stringArray = stringSplitter(empty_string);
+    typeWriter.deleteAll().start();
+    for (var i = 0; i < stringArray.length; i++) {
+      typeWriter.pasteString(stringArray[i] + ' ');
+    }
+    document.getElementById('intro_text').style.textAlign = 'center';
+    typeWriter.start();
+  }
+  //typeWriter.start();
+  //$('#button_elem').fadeOut(700);
 }
