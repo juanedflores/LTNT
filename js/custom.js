@@ -140,11 +140,13 @@ var sound = new Howl({
     track_01: [0, 5000],
     track_02: [5937, 10000],
     track_03: [16000, 19000],
-    track_04: [36000, 25000],
-    track_05: [61700, 22000],
-    track_06: [85000, 31000],
-    track_07: [116000, 19500],
-    track_08: [136000, 17000],
+    track_04: [36000, 18000],
+    track_05: [54000, 7000],
+    track_06: [61700, 22000],
+    track_07: [85000, 16800],
+    track_08: [101800, 14200],
+    track_09: [116000, 19500],
+    track_10: [136000, 17000],
   },
 });
 
@@ -181,38 +183,41 @@ going back to homes which had been destroyed a long time ago.
 sec3 = `Part of the Armenian heritage is a series of traumas
 and pain that carry on from one generation to another. Historically,
 Armenians resided in Eastern Anatolia, in regions that were once part
-of the Ottoman Empire, now modern Turkey. Those who survived during
-the genocide lost everything. Everything, that is, except their
-identity and heritage. Through the preservation of dialects, dishes,
-and stories.`;
+of the Ottoman Empire, now modern Turkey. Those who survived during the
+genocide lost everything.`;
 
-sec4 = `This collective affected me too. Most of my life I rejected
+sec4 = `Everything, that is, except their identity and heritage. Through
+the preservation of dialects, dishes, and stories.`;
+
+sec5 = `This collective trauma affected me too. Most of my life I rejected
 parts of my identity, I did not want to carry the sadness or trauma of
 my Armenian heritage. So I worked as hard as I could to be as French as
 I could, and only kept the positive aspects of my Armenian heritage
 — my family, the language, music and food. As if our collective trauma
 did not shape all of it.`;
 
-sec5 = `As an emerging journalist I found myself focusing on the
+sec6 = `As an emerging journalist I found myself focusing on the
 intersection between geopolitics, territory, marginality and memory.
 I did not expect, however, to see history repeat itself through the
 collective trauma of Armenians facing yet another mass exodus and I
-needed to document it. In September 2023, after several wars and a
+needed to document it.`;
+
+sec7 = `In September 2023, after several wars and a
 prolonged blockade, the region of Nagorno-Karabakh was emptied of all
 its Armenian inhabitants. Much of the physical cultural heritage sites
 were destroyed.`;
 
-sec6 = `Over the three year period reporting from Nagorno-Karabakh,
+sec8 = `Over the three year period reporting from Nagorno-Karabakh,
 there’s this one phrase that kept repeating when 
 I asked how they dealt with the constant uncertainty, how they lived
-with the constant shadow of war and violence: they would always say:
-Կարծես թե վաղը չկար “like there’s no tomorrow”.`;
+with the constant shadow of war and violence: they would always say:<br><br>
+Կարծես թե վաղը չկար<br><br>“like there’s no tomorrow”`;
 
-sec7 = `This website tells the stories of people, who just like my own
+sec9 = `This website tells the stories of people, who just like my own
 grandparents and great-grandparents had left, holding keys to homes
 they knew they would not be able to go back to.`;
 
-script_array = [sec0, sec1, sec2, sec3, sec4, sec5, sec6, sec7];
+script_array = [sec0, sec1, sec2, sec3, sec4, sec5, sec6, sec7, sec8, sec9];
 
 var intro_text_el = document.getElementById('intro_text');
 typeWriter = new Typewriter(intro_text_el, {
@@ -260,6 +265,7 @@ document.getElementById('intro').addEventListener('click', function (e) {
     sound.stop();
     typeWriter.deleteAll().callFunction(() => {
       document.getElementById('button_elem').style.display = 'none';
+      //sound.play(sound_array[6]);
       sound.play(sound_array[script_index]);
       ambience.play();
       script_index++;
@@ -327,16 +333,16 @@ document.addEventListener('scroll', (event) => {
   vw = scale(scrollY, 0, 1000, 50.0, 5.0);
   vw_norm = Math.min(Math.max(parseFloat(vol), 5.0), 50.0);
 
-  if (scrollY > intro_height) {
-    document.getElementById('menu_container').style.pointerEvents = 'auto';
-    document.getElementById('menu_container').style.left = '90%';
-    document.getElementById('menu_button').style.visibility = 'visible';
-
-    if (past_intro == 0) {
-      //menu_button.click();
-      past_intro = -1;
-    }
-  }
+  //if (scrollY > intro_height) {
+  //  document.getElementById('menu_container').style.pointerEvents = 'auto';
+  //  document.getElementById('menu_container').style.left = '90%';
+  //  document.getElementById('menu_button').style.visibility = 'visible';
+  //
+  //  if (past_intro == 0) {
+  //    //menu_button.click();
+  //    past_intro = -1;
+  //  }
+  //}
 
   Howler.volume(vol_norm);
 

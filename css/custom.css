@@ -196,9 +196,10 @@ video::-webkit-media-controls-start-playback-button {
 #mute_button {
   position: absolute;
   width: 80px;
+  transform: translate(0px, -17px);
   bottom: 1%;
   display: block;
-  left: 4%;
+  left: 6%;
   bottom: 10%;
   z-index: 9999;
 }
@@ -217,6 +218,10 @@ video::-webkit-media-controls-start-playback-button {
 
 #menu_container {
   display: block; /* The width is 100%, when the viewport is 800px or smaller */
+  /*These are what were triggered in JS*/
+  pointer-events: auto;
+  left: 90%;
+  visibility: visible;
 }
 
 .linearfadedown {
