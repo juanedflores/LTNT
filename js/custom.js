@@ -451,7 +451,7 @@ function key_button_3() {
   console.log('tets');
   portrait_div.style.display = 'block';
   portrait_div.style.width = '48%';
-  portrait_img.src = 'images/keys/ArminéShadyan.jpg';
+  portrait_img.src = 'images/keys/ArmineShadyan.jpg';
   setTimeout(() => {
     portrait_div.style.opacity = '1';
   }, '1000');
