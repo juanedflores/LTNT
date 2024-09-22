@@ -373,3 +373,59 @@ function sound_button() {
     sound.mute(false);
   }
 }
+
+portrait_div = document.getElementById('key_portrait_container');
+portrait_img = document.getElementById('key_portrait');
+
+function key_button_1() {
+  console.log('tets');
+  portrait_div.style.display = 'block';
+  portrait_div.style.width = '48%';
+  portrait_img.src = 'images/keys/AnnaHayryan.jpg';
+  setTimeout(() => {
+    portrait_div.style.opacity = '1';
+  }, '1000');
+}
+
+function key_button_2() {
+  console.log('tets');
+  portrait_div.style.display = 'block';
+  portrait_div.style.width = '48%';
+  portrait_img.src = 'images/keys/AnnaShaburyan.jpg';
+}
+
+function key_button_3() {
+  console.log('tets');
+  portrait_div.style.display = 'block';
+  portrait_div.style.width = '48%';
+  portrait_img.src = 'images/keys/ArminéShadyan.jpg';
+}
+
+function key_button_4() {
+  console.log('tets');
+  portrait_div.style.display = 'block';
+  portrait_div.style.width = '48%';
+  portrait_img.src = 'images/keys/GemmaAvanesyan.jpg';
+}
+
+function key_button_5() {
+  console.log('tets');
+  portrait_div.style.display = 'block';
+  portrait_div.style.width = '48%';
+  portrait_img.src = 'images/keys/LiraPetrosyan.jpg';
+}
+
+function key_button_6() {
+  console.log('tets');
+  portrait_div.style.display = 'block';
+  //portrait_div.style.visibility = 'visible';
+  portrait_div.style.width = '48%';
+  portrait_img.src = 'images/keys/MarinaAhanoryan.jpg';
+}
+
+function key_button_7() {
+  console.log('tets');
+  portrait_div.style.display = 'block';
+  portrait_div.style.width = '48%';
+  portrait_img.src = 'images/keys/NairaandAnnaShaburyan.jpg';
+}

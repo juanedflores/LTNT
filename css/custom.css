@@ -39,9 +39,38 @@ body {
   }
 }
 
+.key_button {
+  background: black;
+  border: 1px solid black;
+}
+
+.key_button:hover {
+  border: 1px solid white;
+}
+
 #key_text {
   align-items: center;
   margin: auto;
+}
+
+#key_grid {
+  display: grid;
+  align-self: flex-start;
+  /*gap: 1px;*/
+  grid-template-columns: repeat(3, 1fr);
+  width: 48%;
+}
+
+#key_portrait_container {
+  width: 0%;
+  /*visibility: hidden;*/
+  /*display: none;*/
+  opacity: 0;
+  transition: all 1s linear;
+}
+
+#key_grid_container  {
+  /*transition: all 5s linear;*/
 }
 
 #sectheading {
