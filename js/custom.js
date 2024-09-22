@@ -9,7 +9,7 @@ slidesContainer.addEventListener('scroll', (event) => {
   console.log('scrolled');
 });
 
-nextButton.addEventListener('click', () => {
+function slider_prev() {
   const slideWidth = slide.clientWidth;
   slidesContainer.scrollLeft += slideWidth;
   if (slidesContainer.scrollLeft < slideWidth) {
@@ -22,13 +22,11 @@ nextButton.addEventListener('click', () => {
   } else if (slidesContainer.scrollLeft >= slideWidth * 3 && slidesContainer.scrollLeft < slideWidth * 4) {
     whats_cap.innerHTML = 'Nana’s mother sends her a text in Armenian:';
   }
-});
+}
 
-prevButton.addEventListener('click', () => {
+function slider_next() {
   const slideWidth = slide.clientWidth;
   slidesContainer.scrollLeft -= slideWidth;
-  console.log(slideWidth);
-  console.log(slidesContainer.scrollLeft);
   if (slidesContainer.scrollLeft > slideWidth * 3) {
     whats_cap.innerHTML = 'Photo of Nana studying without electricity during the blockade.';
   } else if (slidesContainer.scrollLeft <= slideWidth * 3 && slidesContainer.scrollLeft > slideWidth * 2) {
@@ -39,7 +37,7 @@ prevButton.addEventListener('click', () => {
   } else {
     whats_cap.innerHTML = 'Nana sends a picture of her at her high school graduation to her family. Messages in English. Message of her father written with Cyrillic alphabet in Karabakh Armenian dialect: “my darling baby girl, it’s cold, be careful not to catch a cold”';
   }
-});
+}
 
 new Glider(document.querySelector('.glider'), {
   slidesToShow: 1,

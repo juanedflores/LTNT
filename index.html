@@ -812,14 +812,14 @@
         </div>
         <!--<div style="background-image: url('images/phone.svg'); width: 400px;" alt=""></div>-->
 
-        <div class="slider-wrapper" style="overflow: hidden;">
-          <button class="slide-arrow" id="slide-arrow-prev">
-            &#8249;
-          </button>
-          <button class="slide-arrow" id="slide-arrow-next">
-            &#8250;
-          </button>
-          <ul class="slides-container" id="slides-container">
+        <div class="slider-wrapper" style="overflow: hidden; margin: 0;">
+          <!--<button class="slide-arrow" id="slide-arrow-prev">-->
+          <!--  &#8249;-->
+          <!--</button>-->
+          <!--<button class="slide-arrow" id="slide-arrow-next">-->
+          <!--  &#8250;-->
+          <!--</button>-->
+          <ul class="slides-container" id="slides-container" style="pointer-events: none;">
             <li class="slide">
               <img src="images/6D.jpg" alt="">
             </li>
@@ -847,6 +847,12 @@
               <!--<p>Nana’s mother sends her a text in Armenian:</p>-->
             </li>
           </ul>
+          <div style="margin-top: 20px;">
+            <button id="" class="" style="width: 20px; background: rgba(0, 0, 0, 0);" onclick="slider_next()"><img
+                src="images/arrow_left.svg" alt=""></button>
+            <button id="" class="" style="width: 20px; background: rgba(0, 0, 0, 0); float: right;"
+              onclick="slider_prev()"><img src="images/arrow_right.svg" alt=""></button>
+          </div>
           <p id="whats_caption">Nana sends a picture of her at her high school graduation to her family. Messages in
             English.
             <br />Message of her father written with Cyrillic alphabet in Karabakh Armenian dialect: "my darling
