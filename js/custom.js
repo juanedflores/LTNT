@@ -3,6 +3,7 @@ const slide = document.querySelector('.slide');
 const prevButton = document.getElementById('slide-arrow-prev');
 const nextButton = document.getElementById('slide-arrow-next');
 script_done = 0;
+clicked_to_start = 0;
 
 whats_cap = document.getElementById('whats_caption');
 
@@ -140,7 +141,7 @@ var sound = new Howl({
   sprite: {
     track_01: [0, 5000],
     track_02: [5937, 10000],
-    track_03: [16000, 19000],
+    track_03: [15900, 19000],
     track_04: [36000, 18000],
     track_05: [54000, 7000],
     track_06: [61700, 22000],
@@ -169,52 +170,51 @@ empty_string = '[ Click to Start ] <p></p> ';
 sec0 = 'What would you do if you only had several hours to flee a home you will never be able to return to?';
 
 sec1 = `As a daughter of immigrants and a member
-of a nation which has more people living in the diaspora
-than in its state, the question of cultural heritage has
+of a nation which has more people living in the diaspora <i></i>
+than in its state, <span></span> the question of cultural heritage has
 always tormented me.`;
 
-sec2 = `The places where my family comes from
-do not exist anymore. Or at least, not like they used to. 
-I grew up witnessing our elders yearning for home and hearing
-stories about how they were persecuted and fled, hanging
-onto their keys until their very last breath, dreaming of
-going back to homes which had been destroyed a long time ago. 
+sec2 = `The places where my family comes from do not exist anymore. <b></b> Or at least, not like they used to. <span></span>
+I grew up witnessing our elders yearning for home <b></b> and hearing
+stories about how they were persecuted and fled, <b></b> hanging
+onto their keys until their very last breath, <b></b> dreaming of
+going back to homes <b></b> which had been destroyed a long time ago. 
 `;
 
 sec3 = `Part of the Armenian heritage is a series of traumas
-and pain that carry on from one generation to another. Historically,
-Armenians resided in Eastern Anatolia, in regions that were once part
-of the Ottoman Empire, now modern Turkey. Those who survived during the
+and pain <b></b> that carry on from one generation to another. <span></span> Historically, <span></span>
+Armenians resided in Eastern Anatolia, <span></span> in regions that were once part
+of the Ottoman Empire, <b></b> now modern Turkey. <span></span> <span></span> <b></b> Those who survived during the
 genocide lost everything.`;
 
-sec4 = `Everything, that is, except their identity and heritage. Through
-the preservation of dialects, dishes, and stories.`;
+sec4 = `Everything, that is, except their identity <b></b> and heritage. <span></span> Through
+the preservation of dialects, <b></b> dishes, <b></b> and stories.`;
 
-sec5 = `This collective trauma affected me too. Most of my life I rejected
-parts of my identity, I did not want to carry the sadness or trauma of
-my Armenian heritage. So I worked as hard as I could to be as French as
+sec5 = `This collective trauma affected me too. <span></span> Most of my life I rejected
+parts of my identity, <span></span> I did not want <i></i> to carry the sadness or trauma of
+my Armenian heritage. <b></b> So I worked as hard as I could to be as French as
 I could, and only kept the positive aspects of my Armenian heritage
 — my family, the language, music and food. As if our collective trauma
 did not shape all of it.`;
 
 sec6 = `As an emerging journalist I found myself focusing on the
-intersection between geopolitics, territory, marginality and memory.
-I did not expect, however, to see history repeat itself through the
+intersection between geopolitics, <b></b> territory, <b></b> marginality <b></b> and memory. <b></b>
+I did not expect, however, <b></b> to see history repeat itself through the
 collective trauma of Armenians facing yet another mass exodus and I
 needed to document it.`;
 
-sec7 = `In September 2023, after several wars and a
-prolonged blockade, the region of Nagorno-Karabakh was emptied of all
+sec7 = `In September 2023, <span></span> after several wars <b></b> and a
+prolonged blockade, <span></span> the region of Nagorno-Karabakh was emptied of all
 its Armenian inhabitants. Much of the physical cultural heritage sites
 were destroyed.`;
 
-sec8 = `Over the three year period reporting from Nagorno-Karabakh,
-there’s this one phrase that kept repeating when 
-I asked how they dealt with the constant uncertainty, how they lived
-with the constant shadow of war and violence. They would always say:<br><br>
-Կարծես թե վաղը չկար<br><br>“like there’s no tomorrow”`;
+sec8 = `Over the three year period reporting from Nagorno-Karabakh, <b></b>
+there’s this one phrase <span></span> that kept repeating when 
+I asked people how they dealt with the constant uncertainty, how they lived
+with the constant shadow of war and violence. They would always say: <br><br> 
+Կարծես թե վաղը չկար <br><br> “like there’s no tomorrow”`;
 
-sec9 = `This website tells the stories of people, who just like my own
+sec9 = `This website tells the stories of people, <b></b> who just like my own
 grandparents and great-grandparents had left, holding keys to homes
 they knew they would not be able to go back to.`;
 
@@ -239,12 +239,9 @@ $(document.getElementById('intro_container')).mousemove(function (e) {
   var this_height = $(this).height();
   var Y = e.pageY;
   var loc = Math.abs(offset - Y);
-  console.log(loc);
   if (loc < this_height - this_height / 6 && script_done == 0) {
-    console.log('above');
     $(document.getElementById('intro_down_arrow')).fadeOut();
   } else {
-    console.log('below');
     $(document.getElementById('intro_down_arrow')).fadeIn();
   }
 });
@@ -259,47 +256,78 @@ document.getElementById('intro').addEventListener('click', function (e) {
   //document.getElementById('button_elem').addEventListener('click', function (e) {
   //document.getElementById('intro').style.pointerEvents = 'none';
 
-  vw = document.documentElement.clientWidth;
-  thresh1 = vw * 0.2;
-  thresh2 = vw * 0.8;
-  if (event.clientX > thresh1 && event.clientX < thresh2) {
-    sound.stop();
-    typeWriter.deleteAll().callFunction(() => {
+  if (document.getElementById('button_elem').style.display == 'block' || clicked_to_start == 0 || document.getElementById('button_elem').style.display == 'inline-block') {
+    clicked_to_start = 1;
+    vw = document.documentElement.clientWidth;
+    thresh1 = vw * 0.2;
+    thresh2 = vw * 0.8;
+    if (event.clientX > thresh1 && event.clientX < thresh2) {
+      sound.stop();
       document.getElementById('button_elem').style.display = 'none';
-      //sound.play(sound_array[6]);
-      sound.play(sound_array[script_index]);
-      ambience.play();
-      script_index++;
-      document.getElementById('intro').style.cursor = 'default';
-      //document.getElementById('intro').style.pointerEvents = 'none';
-      document.getElementById('intro_text').style.textAlign = 'left';
-    });
-
-    // AFTER SCRIPT IS DONE
-    if (script_index == script_array.length) {
-      script_done = 1;
-      script_index = 0;
-      console.log('reached the end');
-      //document.getElementsByTagName('body')[0].style = 'overflow: visible';
-      //typeWriter.deleteAll().callFunction(() => {
-      //  $('#intro_div').fadeOut(1200);
-      //});
-      $('#intro_text').fadeOut(1200);
-      $('#button_elem').fadeOut(700);
-      menu_list.style.visibility = 'visible';
-      $('#intro_down_arrow').fadeIn(1200);
-    } else {
-      // Write Text
-      stringArray = stringSplitter(script_array[script_index]);
-      for (var i = 0; i < stringArray.length; i++) {
-        typeWriter.pasteString(stringArray[i] + ' ');
-      }
-      typeWriter.start().callFunction(() => {
-        document.getElementById('button_elem').style.display = 'block';
-        //document.getElementById('intro').style.cursor = 'pointer';
-        //menu_button.setAttribute('data-src', 'documents/key_menu_white.json');
-        document.getElementById('intro').style.pointerEvents = 'auto';
+      typeWriter.deleteAll().callFunction(() => {
+        //sound.play(sound_array[6]);
+        sound.play(sound_array[script_index]);
+        ambience.play();
+        script_index++;
+        document.getElementById('intro').style.cursor = 'default';
+        //document.getElementById('intro').style.pointerEvents = 'none';
+        document.getElementById('intro_text').style.textAlign = 'left';
       });
+
+      // AFTER SCRIPT IS DONE
+      if (script_index == script_array.length) {
+        script_done = 1;
+        script_index = 0;
+        console.log('reached the end');
+        //document.getElementsByTagName('body')[0].style = 'overflow: visible';
+        //typeWriter.deleteAll().callFunction(() => {
+        //  $('#intro_div').fadeOut(1200);
+        //});
+        $('#intro_text').fadeOut(1200);
+        $('#button_elem').fadeOut(700);
+        menu_list.style.visibility = 'visible';
+        $('#intro_down_arrow').fadeIn(1200);
+      } else {
+        // Write Text
+
+        if (script_index == 8) {
+          console.log('pause');
+          typeWriter.changeDelay(300);
+        } else if (script_index == 1) {
+          typeWriter.changeDelay(210);
+        } else if (script_index == 2) {
+          typeWriter.changeDelay(220);
+        } else if (script_index == 3) {
+          typeWriter.changeDelay(210);
+        } else if (script_index == 4) {
+          typeWriter.changeDelay(220);
+        } else if (script_index == 5) {
+          typeWriter.changeDelay(220);
+        } else if (script_index == 6) {
+          typeWriter.changeDelay(220);
+        } else {
+          typeWriter.changeDelay(190);
+        }
+        stringArray = stringSplitter(script_array[script_index]);
+        for (var i = 0; i < stringArray.length; i++) {
+          typeWriter.pasteString(stringArray[i] + ' ');
+          if (stringArray[i] == '<br><br>' || stringArray[i] == '<span></span>') {
+            typeWriter.pauseFor(370);
+          }
+          if (stringArray[i] == '<b></b>') {
+            typeWriter.pauseFor(70);
+          }
+          if (stringArray[i] == '<i></i>') {
+            typeWriter.pauseFor(20);
+          }
+        }
+        typeWriter.start().callFunction(() => {
+          document.getElementById('button_elem').style.display = 'block';
+          //document.getElementById('intro').style.cursor = 'pointer';
+          //menu_button.setAttribute('data-src', 'documents/key_menu_white.json');
+          document.getElementById('intro').style.pointerEvents = 'auto';
+        });
+      }
     }
   }
 });
@@ -523,14 +551,18 @@ function replay_Intro() {
     }
     typeWriter.start();
   } else {
+    sound.stop();
+    //$('#button_elem').fadeOut(200);
+    clicked_to_start = 0;
     script_done = 0;
     stringArray = stringSplitter(empty_string);
     typeWriter.deleteAll().start();
-    for (var i = 0; i < stringArray.length; i++) {
-      typeWriter.pasteString(stringArray[i] + ' ');
-    }
-    document.getElementById('intro_text').style.textAlign = 'center';
-    typeWriter.start();
+    //for (var i = 0; i < stringArray.length; i++) {
+    //  typeWriter.pasteString(stringArray[i] + ' ');
+    //  document.getElementById('button_elem').style.display = 'none';
+    //}
+    //document.getElementById('intro_text').style.textAlign = 'center';
+    //typeWriter.start();
   }
   //typeWriter.start();
   //$('#button_elem').fadeOut(700);
