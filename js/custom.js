@@ -392,6 +392,9 @@ function key_button_2() {
   portrait_div.style.display = 'block';
   portrait_div.style.width = '48%';
   portrait_img.src = 'images/keys/AnnaShaburyan.jpg';
+  setTimeout(() => {
+    portrait_div.style.opacity = '1';
+  }, '1000');
 }
 
 function key_button_3() {
@@ -399,6 +402,9 @@ function key_button_3() {
   portrait_div.style.display = 'block';
   portrait_div.style.width = '48%';
   portrait_img.src = 'images/keys/ArminéShadyan.jpg';
+  setTimeout(() => {
+    portrait_div.style.opacity = '1';
+  }, '1000');
 }
 
 function key_button_4() {
@@ -406,6 +412,9 @@ function key_button_4() {
   portrait_div.style.display = 'block';
   portrait_div.style.width = '48%';
   portrait_img.src = 'images/keys/GemmaAvanesyan.jpg';
+  setTimeout(() => {
+    portrait_div.style.opacity = '1';
+  }, '1000');
 }
 
 function key_button_5() {
@@ -413,6 +422,9 @@ function key_button_5() {
   portrait_div.style.display = 'block';
   portrait_div.style.width = '48%';
   portrait_img.src = 'images/keys/LiraPetrosyan.jpg';
+  setTimeout(() => {
+    portrait_div.style.opacity = '1';
+  }, '1000');
 }
 
 function key_button_6() {
@@ -421,6 +433,9 @@ function key_button_6() {
   //portrait_div.style.visibility = 'visible';
   portrait_div.style.width = '48%';
   portrait_img.src = 'images/keys/MarinaAhanoryan.jpg';
+  setTimeout(() => {
+    portrait_div.style.opacity = '1';
+  }, '1000');
 }
 
 function key_button_7() {
@@ -428,4 +443,7 @@ function key_button_7() {
   portrait_div.style.display = 'block';
   portrait_div.style.width = '48%';
   portrait_img.src = 'images/keys/NairaandAnnaShaburyan.jpg';
+  setTimeout(() => {
+    portrait_div.style.opacity = '1';
+  }, '1000');
 }
