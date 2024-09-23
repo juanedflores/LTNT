@@ -977,8 +977,12 @@
               </div>
             </div>
 
-            <button aria-label="Previous" class="glider-prev">«</button>
-            <button aria-label="Next" class="glider-next">»</button>
+            <!--<button aria-label="Previous" class="glider-prev">«</button>-->
+            <!--<button aria-label="Next" class="glider-next">»</button>-->
+            <button id="Previous" class="glider-prev" style="width: 40px; background: rgba(0, 0, 0, 0);"
+              onclick="slider_next()"><img src="images/arrow_left.svg" alt=""></button>
+            <button id="Next" class="glider-next" style="width: 40px; background: rgba(0, 0, 0, 0); float: right;"
+              onclick="slider_prev()"><img src="images/arrow_right.svg" alt=""></button>
           </div>
 
           <!--<img src="images/7E.png" loading=""-->
