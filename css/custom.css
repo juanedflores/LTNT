@@ -324,7 +324,7 @@ video::-webkit-media-controls-start-playback-button {
   }
 
   #slider_left {
-    width: 40px !important;
+    width: 20% !important;
     padding-left: 20px !important;
     padding-top: 10px !important;
   }
