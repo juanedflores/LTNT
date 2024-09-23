@@ -194,28 +194,28 @@ sec5 = `This collective trauma affected me too. <span></span> Most of my life I 
 parts of my identity, <span></span> I did not want <i></i> to carry the sadness or trauma of
 my Armenian heritage. <b></b> So I worked as hard as I could to be as French as
 I could, and only kept the positive aspects of my Armenian heritage
-— my family, the language, music and food. As if our collective trauma
+— my family, <b></b> the language, <b></b> music <b></b> and food. As if our collective trauma
 did not shape all of it.`;
 
 sec6 = `As an emerging journalist I found myself focusing on the
 intersection between geopolitics, <b></b> territory, <b></b> marginality <b></b> and memory. <b></b>
-I did not expect, however, <b></b> to see history repeat itself through the
-collective trauma of Armenians facing yet another mass exodus and I
+I did not expect, however, <b></b> to see history repeat itself <b></b> through the
+collective trauma of Armenians facing yet another mass exodus <b></b> and I
 needed to document it.`;
 
 sec7 = `In September 2023, <span></span> after several wars <b></b> and a
-prolonged blockade, <span></span> the region of Nagorno-Karabakh was emptied of all
-its Armenian inhabitants. Much of the physical cultural heritage sites
+prolonged blockade, <span></span> the region of Nagorno-Karabakh <span></span> was emptied of all <b></b> 
+its Armenian inhabitants. <span></span> <b></b> Much of the physical <span></span> cultural <span></span> heritage sites <b></b>
 were destroyed.`;
 
 sec8 = `Over the three year period reporting from Nagorno-Karabakh, <b></b>
 there’s this one phrase <span></span> that kept repeating when 
-I asked people how they dealt with the constant uncertainty, how they lived
+I asked people how they dealt with the constant uncertainty, <b></b> how they lived
 with the constant shadow of war and violence. They would always say: <br><br> 
 Կարծես թե վաղը չկար <br><br> “like there’s no tomorrow”`;
 
 sec9 = `This website tells the stories of people, <b></b> who just like my own
-grandparents and great-grandparents had left, holding keys to homes
+grandparents and great-grandparents <b></b> had left, <span></span> <b></b> holding keys to homes
 they knew they would not be able to go back to.`;
 
 script_array = [sec0, sec1, sec2, sec3, sec4, sec5, sec6, sec7, sec8, sec9];
@@ -292,7 +292,7 @@ document.getElementById('intro').addEventListener('click', function (e) {
 
         if (script_index == 8) {
           console.log('pause');
-          typeWriter.changeDelay(300);
+          typeWriter.changeDelay(270);
         } else if (script_index == 1) {
           typeWriter.changeDelay(210);
         } else if (script_index == 2) {
