@@ -459,7 +459,7 @@ video::-webkit-media-controls-start-playback-button {
   }
 
   #menu_container {
-    display: none; /* The width is 100%, when the viewport is 800px or smaller */
+    display: none !important; /* The width is 100%, when the viewport is 800px or smaller */
   }
 
   .linearfadedown {
