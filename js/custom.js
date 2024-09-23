@@ -466,12 +466,14 @@ function sound_button() {
 
 portrait_div = document.getElementById('key_portrait_container');
 portrait_img = document.getElementById('key_portrait');
+portrait_img_lightbox = document.getElementById('key_portrait_lightbox');
 
 function key_button_1() {
   console.log('tets');
   portrait_div.style.display = 'block';
   portrait_div.style.width = '48%';
   portrait_img.src = 'images/keys/AnnaHayryan.jpg';
+  portrait_img_lightbox.href = 'images/keys/AnnaHayryan.jpg';
   setTimeout(() => {
     portrait_div.style.opacity = '1';
   }, '1000');
@@ -482,6 +484,7 @@ function key_button_2() {
   portrait_div.style.display = 'block';
   portrait_div.style.width = '48%';
   portrait_img.src = 'images/keys/AnnaShaburyan.jpg';
+  portrait_img_lightbox.href = 'images/keys/AnnaShaburyan.jpg';
   setTimeout(() => {
     portrait_div.style.opacity = '1';
   }, '1000');
@@ -492,6 +495,7 @@ function key_button_3() {
   portrait_div.style.display = 'block';
   portrait_div.style.width = '48%';
   portrait_img.src = 'images/keys/ArmineShadyan.jpg';
+  portrait_img_lightbox.href = 'images/keys/ArmineShadyan.jpg';
   setTimeout(() => {
     portrait_div.style.opacity = '1';
   }, '1000');
@@ -502,6 +506,7 @@ function key_button_4() {
   portrait_div.style.display = 'block';
   portrait_div.style.width = '48%';
   portrait_img.src = 'images/keys/GemmaAvanesyan.jpg';
+  portrait_img_lightbox.href = 'images/keys/GemmaAvanesyan.jpg';
   setTimeout(() => {
     portrait_div.style.opacity = '1';
   }, '1000');
@@ -512,6 +517,7 @@ function key_button_5() {
   portrait_div.style.display = 'block';
   portrait_div.style.width = '48%';
   portrait_img.src = 'images/keys/LiraPetrosyan.jpg';
+  portrait_img_lightbox.href = 'images/keys/LiraPetrosyan.jpg';
   setTimeout(() => {
     portrait_div.style.opacity = '1';
   }, '1000');
@@ -523,6 +529,7 @@ function key_button_6() {
   //portrait_div.style.visibility = 'visible';
   portrait_div.style.width = '48%';
   portrait_img.src = 'images/keys/MarinaAhanoryan.jpg';
+  portrait_img_lightbox.href = 'images/keys/MarinaAhanoryan.jpg';
   setTimeout(() => {
     portrait_div.style.opacity = '1';
   }, '1000');
@@ -533,6 +540,7 @@ function key_button_7() {
   portrait_div.style.display = 'block';
   portrait_div.style.width = '48%';
   portrait_img.src = 'images/keys/NairaandAnnaShaburyan.jpg';
+  portrait_img_lightbox.href = 'images/keys/NairaandAnnaShaburyan.jpg';
   setTimeout(() => {
     portrait_div.style.opacity = '1';
   }, '1000');
