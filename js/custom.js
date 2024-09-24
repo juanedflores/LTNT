@@ -23,9 +23,10 @@ function slider_prev() {
       'Message of her father written with Cyrillic alphabet in a mix of Karabakh Armenian dialect and Russian: “My darling baby girl, today you have the honor of representing your school, an institution that gives you a ticket for a new life. I know you have a strong personality and disappointments should not take you down. It does not matter that we are not physically with you. You know that you are always in our hearts filled of love. Show us all the strength of your soul. We are proud of you my joy. May God be with us.”';
   } else if (slidesContainer.scrollLeft >= slideWidth * 2 && slidesContainer.scrollLeft < slideWidth * 3) {
     whats_cap.innerHTML = 'Photo of Nana studying without electricity during the blockade.';
-  } else if (slidesContainer.scrollLeft >= slideWidth * 3 && slidesContainer.scrollLeft < slideWidth * 4) {
-    whats_cap.innerHTML = 'Nana’s mother sends her a text in Armenian:';
   }
+  //else if (slidesContainer.scrollLeft >= slideWidth * 3 && slidesContainer.scrollLeft < slideWidth * 4) {
+  //  whats_cap.innerHTML = 'Nana’s mother sends her a text in Armenian:';
+  //}
 }
 
 function slider_next() {

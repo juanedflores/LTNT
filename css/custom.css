@@ -10,8 +10,16 @@ body {
   animation-fill-mode: forwards;
 }
 
+.list-2 {
+  line-height: 17px !important;
+}
+
 .gap-progress {
   background-color: #a48e6f !important;
+}
+
+.green-audio-player {
+  width: 50% !important;
 }
 
 .progress__pin {
@@ -19,7 +27,7 @@ body {
 }
 
 #whats_caption {
-  height: 100px !important;
+  height: 300px !important;
 }
 
 .block-quote-copy {
@@ -908,6 +916,10 @@ video::-webkit-media-controls-start-playback-button {
     /*position: relative;*/
     /*top: 100px !important;*/
     /*visibility: hidden !important;*/
+  }
+
+  .green-audio-player {
+    display: none !important;
   }
 
   #about {
