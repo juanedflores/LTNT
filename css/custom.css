@@ -10,6 +10,10 @@ body {
   animation-fill-mode: forwards;
 }
 
+table {
+  width: 50vw/;
+}
+
 .list-2 {
   line-height: 17px !important;
 }
@@ -773,7 +777,7 @@ video::-webkit-media-controls-start-playback-button {
 
   .text-block-17-copy {
     /*display: none;*/
-    top: -57vh;
+    top: -64vh;
     left: -6vw;
     padding: 25px;
     padding-right: 85px;
@@ -925,5 +929,12 @@ video::-webkit-media-controls-start-playback-button {
   #about {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  @media screen and (max-width: 400px) {
+    table {
+      width: 100%;
+      font-size: 11px;
+    }
   }
 }
