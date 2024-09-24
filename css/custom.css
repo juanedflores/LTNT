@@ -931,6 +931,10 @@ video::-webkit-media-controls-start-playback-button {
     padding-right: 20px;
   }
 
+  .text-block-47 {
+    margin-bottom: 100px;
+  }
+
   @media screen and (max-width: 400px) {
     table {
       width: 100%;
