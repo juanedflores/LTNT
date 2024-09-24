@@ -11,6 +11,8 @@ slidesContainer.addEventListener('scroll', (event) => {
   console.log('scrolled');
 });
 
+new GreenAudioPlayer('.gap-example');
+
 function slider_prev() {
   const slideWidth = slide.clientWidth;
   slidesContainer.scrollLeft += slideWidth;

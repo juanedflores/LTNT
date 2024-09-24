@@ -10,6 +10,14 @@ body {
   animation-fill-mode: forwards;
 }
 
+.gap-progress {
+  background-color: #a48e6f !important;
+}
+
+.progress__pin {
+  background-color: #a48e6f !important;
+}
+
 #whats_caption {
   height: 100px !important;
 }
@@ -300,6 +308,7 @@ video::-webkit-media-controls-start-playback-button {
 
   .section-8 {
     height: 50%;
+    margin: auto;
   }
 
   .image-10 {
@@ -899,5 +908,10 @@ video::-webkit-media-controls-start-playback-button {
     /*position: relative;*/
     /*top: 100px !important;*/
     /*visibility: hidden !important;*/
+  }
+
+  #about {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
