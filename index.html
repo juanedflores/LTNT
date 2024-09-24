@@ -166,7 +166,11 @@
       </div>
     </div>
   </section>
-  <section class="section-8"></section>
+  <section class="section-8">
+    <div class="w-layout-blockcontainer w-container">
+      <img src="images/Screen-Shot-2024-08-19-at-8.59.20-AM.png" alt="">
+    </div>
+  </section>
   <section class="img">
     <div class="w-layout-blockcontainer container-9 w-container">
       <img src="images/sketch7.png" loading="" width="500" height="Auto" alt="" sizes="(max-width: 767px) 100vw, 500px"
@@ -253,8 +257,8 @@
         <div class="swiper-scrollbar"></div>
       </div>
       <div id="swiper_cap_container" style="width: 20%; display: flex; flex-direction: column;">
-        <div id="swiper_button_container" style="padding-left: 20px; font-size: 10px; padding-top: 100%;">
-          <div>
+        <div id="swiper_button_container" style="padding-left: 20px; font-size: 10px; padding-top: 20px;">
+          <div style="padding-top: 10px;">
             <button id="left" class="" style="width: 20%; background: rgba(0, 0, 0, 0);" onclick="moveLeft()"><img
                 src="images/arrow_left_muted.svg" alt=""></button>
             <button id="right" class="" style="width: 20%; background: rgba(0, 0, 0, 0); float: right;"
@@ -511,6 +515,7 @@
     <div class="w-layout-blockcontainer w-container">
       <div class="text-block-19">ABOVE: Kolya at the Abastan factory, a self organized community of artists in Tumanyan,
         Armenia, where he can focus on his writing.</div>
+      <p></p>
       <div class="text-block-18">
         Kolya lost his legs in Nagorno-Karabakh during the 2020 war, while he was doing his military service, and was
         part of a group of of six boys who were surrounded for seventy days by Azerbaijani troops.
@@ -612,7 +617,7 @@
         <div class="caption_profile">Sarkis, his wife Astghik and their two kids in the trailer they live in.</div>
       </div>
       <div class="div-block-12 w-clearfix">
-        <div class="text-block-17">Sarkis</div>
+        <div class="text-block-17 sarkis">Sarkis</div>
       </div>
     </div>
   </section>
@@ -729,7 +734,7 @@
             Azerbaijan, and moved to Tegh in Armenia. The village is on the border, and
             often comes under fire, but it is near the Lachin corridor, and Nariné his mother wanted to remain close to
             Nagorno-Karabakh and her son. The blockade made the separation even more painful.
-            <br />‍<br /><br /><br />Narek’s sisters Naré, Anna and Anoush feel a little isolated and there and struggle
+            <br />‍<br />Narek’s sisters Naré, Anna and Anoush feel a little isolated and there and struggle
             to make new friends. The oldest Naré, dreams of becoming a hairdresser. “Maybe one day I could have my own
             salon,” she says, blushing. She wants to move to Goris, the closest
             city. While being worried about their older brother, the family also has to prepare for the younger one
@@ -1205,33 +1210,33 @@
     <div id="key_grid_container" class="w-layout-blockcontainer container-18 w-container"
       style="padding-bottom:10vh; display: flex; flex-direction: row;">
       <div id="key_grid">
-        <button class="key_button" onclick="key_button_1()">
+        <button id="key_1" class="key_button" onclick="key_button_1()">
           <img src="images/keys/AnnaHayranKey.jpg" alt="">
         </button>
-        <button class="key_button" onclick="key_button_2()">
+        <button id="key_2" class="key_button" onclick="key_button_2()">
           <img src="images/keys/AnnaShaburyanKey.jpg" alt="">
         </button>
-        <button class="key_button" onclick="key_button_3()">
+        <button id="key_3" class="key_button" onclick="key_button_3()">
           <img src="images/keys/ArmineShadyanKey.jpg" alt="">
         </button>
-        <button class="key_button" onclick="key_button_4()">
+        <button id="key_4" class="key_button" onclick="key_button_4()">
           <img src="images/keys/GemmaAvanesyanKey.jpg" alt="">
         </button>
-        <button class="key_button" onclick="key_button_5()">
-          <img src="images/keys/LiraPetrosyanKey.jpg" alt="">
-        </button>
-        <button class="key_button" onclick="key_button_6()">
+        <button id="key_6" class="key_button" onclick="key_button_6()">
           <img src="images/keys/MarinaAhanoryanKeys.jpg" alt="">
         </button>
-        <div></div>
-        <button class="key_button" onclick="key_button_7()">
+        <button id="key_7" class="key_button" onclick="key_button_7()">
           <img src="images/keys/NairiandAnnaShaburyanKey.jpg" alt="">
+        </button>
+        <div></div>
+        <button id="key_5" class="key_button" onclick="key_button_5()">
+          <img src="images/keys/LiraPetrosyanKey.jpg" alt="">
         </button>
         <div></div>
       </div>
       <div id="key_portrait_container" style="margin-left: 20px;" uk-lightbox>
-        <a id="key_portrait_lightbox" href="images/keys/NairiandAnnaShaburyanKey.jpg">
-          <img id="key_portrait" src="images/keys/NairiandAnnaShaburyanKey.jpg" alt="">
+        <a id="key_portrait_lightbox" href="images/keys/NairiandAnnaShaburyan.jpg">
+          <img id="key_portrait" src="images/keys/NairiandAnnaShaburyan.jpg" alt="">
         </a>
       </div>
     </div>
@@ -1404,8 +1409,9 @@
     <div class="w-layout-blockcontainer w-container"
       uk-scrollspy="target: > div > .column-5; cls: uk-animation-slide-right; delay: 1000; repeat: true">
       <h1 class="heading-12-copy-mobile">Ani</h1>
-      <div class="columns-3 w-row">
-        <div class="column-4 w-col w-col-4"> <a href="images/Ani_Shirt.jpg"
+      <div class="columns-3 w-row" uk-lightbox>
+        <div class="column-4 w-col w-col-4">
+          <a href="images/Ani_Shirt.jpg"
             uk-scrollspy="target: > img; cls: uk-animation-fade; delay: 2000; repeat: true">
             <img src="images/Ani_Shirt.jpg" loading=""
               sizes="(max-width: 479px) 29vw, (max-width: 767px) 30vw, (max-width: 991px) 229.3333282470703px, 300px"
@@ -1439,7 +1445,7 @@
     </div>
   </section>
   <section class="profiletook1">
-    <div class="w-layout-blockcontainer w-container">
+    <div class="w-layout-blockcontainer w-container" uk-lightbox>
       <h1 class="heading-12-mobile">Ira</h1>
       <div class=" columns-3 w-row"
         uk-scrollspy="target: > .column-4; cls: uk-animation-slide-left; delay: 1000; repeat: true">
@@ -1491,7 +1497,7 @@
     </div>
   </section>
   <section class="profiletook2">
-    <div class="w-layout-blockcontainer w-container">
+    <div class="w-layout-blockcontainer w-container" uk-lightbox>
       <h1 class="heading-12-copy-mobile">Anna</h1>
       <div class="columns-3 w-row"
         uk-scrollspy="target: > .column-5; cls: uk-animation-slide-right; delay: 1000; repeat: true">
@@ -1551,7 +1557,7 @@
     </div>
   </section>
   <section class="profiletook1">
-    <div class="w-layout-blockcontainer w-container">
+    <div class="w-layout-blockcontainer w-container" uk-lightbox>
       <h1 class="heading-12-mobile">Anna</h1>
       <div class="columns-3 w-row"
         uk-scrollspy="target: > .column-4; cls: uk-animation-slide-left; delay: 1000; repeat: true">
@@ -1600,7 +1606,7 @@
     </div>
   </section>
   <section class="profiletook2">
-    <div class="w-layout-blockcontainer w-container">
+    <div class="w-layout-blockcontainer w-container" uk-lightbox>
       <h1 class="heading-12-copy-mobile">Angela</h1>
       <div class="columns-3 w-row"
         uk-scrollspy="target: > .column-5; cls: uk-animation-slide-right; delay: 1000; repeat: true">
@@ -1653,10 +1659,10 @@
     <div class="w-layout-blockcontainer w-container">
       <!--<div class="text-block-45">ABOUT HER SON SASSOON</div>-->
       <blockquote class="block-quote-copy quote-copy">
-        I went to the cemetery, I saw that someone was dismantling his child’s tombstone, to take it. I said I
+        “I went to the cemetery, I saw that someone was dismantling his child’s tombstone, to take it. I said I
         am not ready to evacuate. I said if I leave, I need to take the tombstone of my Sassoon. They told me we are
         supposed to take this heavy rock? I said I am not leaving without it.
-        I am not leaving without it.
+        I am not leaving without it.”
       </blockquote>
       <!--<div class="div-block-20">-->
       <!--  <div class="text-block-45">ABOUT THE TOMBSTONE OF SASSOON</div>-->
@@ -1676,7 +1682,7 @@
     </div>
   </section>
   <section class="profiletook1">
-    <div class="w-layout-blockcontainer w-container">
+    <div class="w-layout-blockcontainer w-container" uk-lightbox>
       <h1 class="heading-12-mobile">Noune</h1>
       <div class="columns-3 w-row"
         uk-scrollspy="target: > .column-4; cls: uk-animation-slide-left; delay: 1000; repeat: true">
@@ -1720,7 +1726,7 @@
         “It was on the last day, we were about to evacuate. My friend&#x27;s family was about to evacuate on the 25th.
         We went to bury a letter. While we were burying the letter, I saw a green cone and I thought in the future when
         I talk about Artsakh at least I would have something that I brought
-        with me to show them.
+        with me to show them.”
       </blockquote>
       <!--<div class="div-block-20">-->
       <!--  <p class="paragraph">As far as I know, it was in the yard of the kindergarten, the kids were preparing for some-->
@@ -1729,7 +1735,7 @@
     </div>
   </section>
   <section class="profiletook2">
-    <div class="w-layout-blockcontainer w-container">
+    <div class="w-layout-blockcontainer w-container" uk-lightbox>
       <h1 class="heading-12-copy-mobile">Marut</h1>
       <div class="columns-3 w-row"
         uk-scrollspy="target: > .column-5; cls: uk-animation-slide-right; delay: 1000; repeat: true">
@@ -1776,7 +1782,7 @@
       <blockquote class="block-quote-copy quote-copy">
         “I remembered, it crossed my mind that at time when people and tourists could still come to Karabakh, there was
         an Australian guy that I was showing around, he took a stone from the side of road and I was thinking why is he
-        taking a stone from near the river.
+        taking a stone from near the river.”
       </blockquote>
       <!--<div class="div-block-20">-->
       <!--  <p class="paragraph">And I don’t know…I just thought about that and me too I ended up taking a stone. It’s not-->
@@ -1786,7 +1792,7 @@
     </div>
   </section>
   <section class="profiletook1">
-    <div class="w-layout-blockcontainer w-container">
+    <div class="w-layout-blockcontainer w-container" uk-lightbox>
       <h1 class="heading-12-mobile">Mary</h1>
       <div class="columns-3 w-row"
         uk-scrollspy="target: > .column-4; cls: uk-animation-slide-left; delay: 1000; repeat: true">
@@ -1845,7 +1851,7 @@
     </div>
   </section>
   <section class="profiletook2">
-    <div class="w-layout-blockcontainer w-container">
+    <div class="w-layout-blockcontainer w-container" uk-lightbox>
       <h1 class="heading-12-copy-mobile">Donara</h1>
       <div class="columns-3 w-row"
         uk-scrollspy="target: > .column-5; cls: uk-animation-slide-right; delay: 1000; repeat: true">

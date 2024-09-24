@@ -464,23 +464,35 @@ function sound_button() {
   }
 }
 
+key_grid = document.getElementById('key_grid');
 portrait_div = document.getElementById('key_portrait_container');
 portrait_img = document.getElementById('key_portrait');
 portrait_img_lightbox = document.getElementById('key_portrait_lightbox');
 
 function key_button_1() {
-  console.log('tets');
+  key_button = document.getElementById('key_1');
   portrait_div.style.display = 'block';
   portrait_div.style.width = '48%';
   portrait_img.src = 'images/keys/AnnaHayryan.jpg';
   portrait_img_lightbox.href = 'images/keys/AnnaHayryan.jpg';
+
   setTimeout(() => {
     portrait_div.style.opacity = '1';
   }, '1000');
+
+  for (var i = 0; i < key_grid.children.length; i++) {
+    if (key_grid.children[i].className == 'key_button') {
+      b = key_grid.children[i];
+      b.style.border = '1px solid black';
+    }
+  }
+
+  key_button.style.border = '1px solid white';
 }
 
 function key_button_2() {
   console.log('tets');
+  key_button = document.getElementById('key_2');
   portrait_div.style.display = 'block';
   portrait_div.style.width = '48%';
   portrait_img.src = 'images/keys/AnnaShaburyan.jpg';
@@ -488,10 +500,20 @@ function key_button_2() {
   setTimeout(() => {
     portrait_div.style.opacity = '1';
   }, '1000');
+
+  for (var i = 0; i < key_grid.children.length; i++) {
+    if (key_grid.children[i].className == 'key_button') {
+      b = key_grid.children[i];
+      b.style.border = '1px solid black';
+    }
+  }
+
+  key_button.style.border = '1px solid white';
 }
 
 function key_button_3() {
   console.log('tets');
+  key_button = document.getElementById('key_3');
   portrait_div.style.display = 'block';
   portrait_div.style.width = '48%';
   portrait_img.src = 'images/keys/ArmineShadyan.jpg';
@@ -499,10 +521,20 @@ function key_button_3() {
   setTimeout(() => {
     portrait_div.style.opacity = '1';
   }, '1000');
+
+  for (var i = 0; i < key_grid.children.length; i++) {
+    if (key_grid.children[i].className == 'key_button') {
+      b = key_grid.children[i];
+      b.style.border = '1px solid black';
+    }
+  }
+
+  key_button.style.border = '1px solid white';
 }
 
 function key_button_4() {
   console.log('tets');
+  key_button = document.getElementById('key_4');
   portrait_div.style.display = 'block';
   portrait_div.style.width = '48%';
   portrait_img.src = 'images/keys/GemmaAvanesyan.jpg';
@@ -510,10 +542,20 @@ function key_button_4() {
   setTimeout(() => {
     portrait_div.style.opacity = '1';
   }, '1000');
+
+  for (var i = 0; i < key_grid.children.length; i++) {
+    if (key_grid.children[i].className == 'key_button') {
+      b = key_grid.children[i];
+      b.style.border = '1px solid black';
+    }
+  }
+
+  key_button.style.border = '1px solid white';
 }
 
 function key_button_5() {
   console.log('tets');
+  key_button = document.getElementById('key_5');
   portrait_div.style.display = 'block';
   portrait_div.style.width = '48%';
   portrait_img.src = 'images/keys/LiraPetrosyan.jpg';
@@ -521,10 +563,20 @@ function key_button_5() {
   setTimeout(() => {
     portrait_div.style.opacity = '1';
   }, '1000');
+
+  for (var i = 0; i < key_grid.children.length; i++) {
+    if (key_grid.children[i].className == 'key_button') {
+      b = key_grid.children[i];
+      b.style.border = '1px solid black';
+    }
+  }
+
+  key_button.style.border = '1px solid white';
 }
 
 function key_button_6() {
   console.log('tets');
+  key_button = document.getElementById('key_6');
   portrait_div.style.display = 'block';
   //portrait_div.style.visibility = 'visible';
   portrait_div.style.width = '48%';
@@ -533,10 +585,20 @@ function key_button_6() {
   setTimeout(() => {
     portrait_div.style.opacity = '1';
   }, '1000');
+
+  for (var i = 0; i < key_grid.children.length; i++) {
+    if (key_grid.children[i].className == 'key_button') {
+      b = key_grid.children[i];
+      b.style.border = '1px solid black';
+    }
+  }
+
+  key_button.style.border = '1px solid white';
 }
 
 function key_button_7() {
   console.log('tets');
+  key_button = document.getElementById('key_7');
   portrait_div.style.display = 'block';
   portrait_div.style.width = '48%';
   portrait_img.src = 'images/keys/NairaandAnnaShaburyan.jpg';
@@ -544,6 +606,15 @@ function key_button_7() {
   setTimeout(() => {
     portrait_div.style.opacity = '1';
   }, '1000');
+
+  for (var i = 0; i < key_grid.children.length; i++) {
+    if (key_grid.children[i].className == 'key_button') {
+      b = key_grid.children[i];
+      b.style.border = '1px solid black';
+    }
+  }
+
+  key_button.style.border = '1px solid white';
 }
 
 function replay_Intro() {

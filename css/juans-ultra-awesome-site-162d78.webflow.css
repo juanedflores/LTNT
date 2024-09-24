@@ -724,12 +724,13 @@
 }
 
 .section-8 {
-  background-image: url('../images/Screen-Shot-2024-08-19-at-8.59.20-AM.png');
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-attachment: scroll;
-  height: 100vh;
+  /*background-image: url('../images/Screen-Shot-2024-08-19-at-8.59.20-AM.png');*/
+  /*background-position: 50%;*/
+  /*background-repeat: no-repeat;*/
+  /*background-size: contain;*/
+  /*background-attachment: scroll;*/
+  /*height: 100vh;*/
+  margin
 }
 
 .text-block-5,
